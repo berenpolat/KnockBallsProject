@@ -4,14 +4,40 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region General Variables
 
-    #region Panels
-
-    [SerializeField] private GameObject startPanel;
+    public int level;
+    public bool isGameStarted;
     
 
     #endregion
     
+    
+    #region Panels
+    [SerializeField] private GameObject startPanel;
+    
+
+    #endregion
+
+
+    #region Singleton
+    public static GameManager Instance { get; set; }
+    
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    
+
+    #endregion
     
     #region Unity Methods
     // Start is called before the first frame update
@@ -40,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void OnClickedTapToPlayButton()
     {
         StartTheGame();
+        isGameStarted = !isGameStarted;
     }
 
     #endregion
