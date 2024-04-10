@@ -1,6 +1,6 @@
 using DG.Tweening;
 using Entities;
-using Interfaces;
+using Factory;
 using UnityEngine;
 
 public class InstantiatorMovements : MonoBehaviour

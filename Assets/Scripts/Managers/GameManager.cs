@@ -12,13 +12,11 @@ public class GameManager : MonoBehaviour
 
     #endregion
     
-    
     #region Panels
     [SerializeField] private GameObject startPanel;
     
 
     #endregion
-
 
     #region Singleton
     public static GameManager Instance { get; set; }
@@ -57,8 +55,6 @@ public class GameManager : MonoBehaviour
     {
         startPanel.SetActive(false);
     }
-    
-    
     
 
     #region Button Controls
