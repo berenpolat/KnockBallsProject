@@ -5,7 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    #region Panels
 
+    [SerializeField] private GameObject startPanel;
+    
+
+    #endregion
+    
+    
     #region Unity Methods
     // Start is called before the first frame update
     void Start()
@@ -20,9 +27,20 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    private void StartTheGame()
+    {
+        startPanel.SetActive(false);
+    }
+    
+    
+    
 
     #region Button Controls
 
+    public void OnClickedTapToPlayButton()
+    {
+        StartTheGame();
+    }
 
     #endregion
 }
