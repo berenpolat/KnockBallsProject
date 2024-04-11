@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     
     #region Panels
     [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject inGamePanel;
     
 
     #endregion
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     private void StartTheGame()
     {
         startPanel.SetActive(false);
+        inGamePanel.SetActive(true);
     }
     
 
