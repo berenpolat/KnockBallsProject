@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     #endregion
     
     #region Panels
-    [SerializeField] private GameObject startPanel;
-    [SerializeField] private GameObject inGamePanel;
+    [SerializeField] private GameObject StartPanel;
+    [SerializeField] private GameObject InGamePanel;
+    [SerializeField] private GameObject BackToMenuPanel;
     
 
     #endregion
@@ -54,8 +55,8 @@ public class GameManager : MonoBehaviour
 
     private void StartTheGame()
     {
-        startPanel.SetActive(false);
-        inGamePanel.SetActive(true);
+        StartPanel.SetActive(false);
+        InGamePanel.SetActive(true);
     }
     
 
@@ -65,6 +66,11 @@ public class GameManager : MonoBehaviour
     {
         StartTheGame();
         isGameStarted = !isGameStarted;
+    }
+
+    public void OnClickedInGameBackButton()
+    {
+        BackToMenuPanel.SetActive(true);
     }
 
     #endregion
