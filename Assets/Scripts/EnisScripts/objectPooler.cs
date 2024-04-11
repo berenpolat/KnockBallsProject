@@ -55,7 +55,7 @@ public class objectPooler : MonoBehaviour
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
-        bullets pooledObj = objectToSpawn.GetComponent<bullets>();
+        Ibullets pooledObj = objectToSpawn.GetComponent<Ibullets>();
         if (pooledObj != null)
         {
             pooledObj.OnObjectSpawn();

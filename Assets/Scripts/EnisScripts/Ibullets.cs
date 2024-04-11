@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public interface bullets
+public interface Ibullets
 {
 
     void OnObjectSpawn();

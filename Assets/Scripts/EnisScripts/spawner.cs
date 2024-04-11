@@ -6,14 +6,21 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
    private objectPooler _objectPooler;
-
+  
    private void Start()
    {
       _objectPooler = objectPooler.Instance;
+      
    }
 
-   private void FixedUpdate()
+   private void Update()
    {
-      _objectPooler.spawnFromPool("cube", transform.position, Quaternion.identity);
+      if (Input.GetMouseButtonDown(0))
+      {
+         Vector3 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+         mousePosition.z = 0f;
+
+         _objectPooler.spawnFromPool("cube", mousePosition, Quaternion.identity);
+      }
    }
 }
