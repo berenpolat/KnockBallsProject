@@ -1,96 +1,112 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+namespace Managers
 {
-    #region General Variables
-
-    public int level;
-    public bool isGameStarted;
-    [SerializeField] private GameObject ObsHolder;
-    private bool movingRight = true;
-    #endregion
-
-    #region Panels
-    [SerializeField] private GameObject StartPanel;
-    [SerializeField] private GameObject InGamePanel;
-    [SerializeField] private GameObject BackToMenuPanel;
-    
-
-    #endregion
-
-    #region Singleton
-    public static GameManager Instance { get; set; }
-    
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (Instance != null && Instance != this)
+        #region General Variables
+
+        public int level;
+        public int bestScore;
+        public bool isGameStarted;
+        [SerializeField] private GameObject obsHolder;
+        private bool _movingRight = true;
+        #endregion
+
+        #region Panels
+        [SerializeField] private GameObject startPanel;
+        [SerializeField] private GameObject ınGamePanel;
+        [SerializeField] private GameObject backToMenuPanel;
+    
+
+        #endregion
+
+        #region Texts
+
+        [SerializeField] private Text lvlText;
+        [SerializeField] private Text bestScoreText;
+
+        #endregion
+        #region Singleton
+        public static GameManager Instance { get; set; }
+    
+        private void Awake()
         {
-            Destroy(gameObject);
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
     
 
-    #endregion
+        #endregion
     
-    #region Unity Methods
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(!isGameStarted) MoveObsHolderAtTheStart();
-    }
-    #endregion
-
-    private void StartTheGame()
-    {
-        StartPanel.SetActive(false);
-        InGamePanel.SetActive(true);
-        ObsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
-    }
-
-    private void MoveObsHolderAtTheStart()
-    {
-        float speed = 1.0f;
-        float minX = -3.0f;
-        float maxX = 3.0f;
-        
-        float targetX = movingRight ? maxX : minX;
-        ObsHolder.transform.position = Vector3.MoveTowards(ObsHolder.transform.position, new Vector3(ObsHolder.transform.position.x, ObsHolder.transform.position.y,targetX ), speed * Time.deltaTime);
-        
-        if (ObsHolder.transform.position.z == targetX)
+        #region Unity Methods
+        // Start is called before the first frame update
+        void Start()
         {
-            movingRight = !movingRight;
+            level = PlayerPrefs.GetInt("level");
+            bestScore = PlayerPrefs.GetInt("bestScore");
         }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if(!isGameStarted) MoveObsHolderAtTheStart();
+            lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
+            bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
+        }
+        #endregion
+
+        private void StartTheGame()
+        {
+            startPanel.SetActive(false);
+            ınGamePanel.SetActive(true);
+            obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
+            level++;
+            PlayerPrefs.SetInt("level",1);
+        }
+
+        private void MoveObsHolderAtTheStart()
+        {
+            float speed = 1.0f;
+            float minX = -3.0f;
+            float maxX = 3.0f;
+        
+            float targetX = _movingRight ? maxX : minX;
+            var position = obsHolder.transform.position;
+            position = Vector3.MoveTowards(position, new Vector3(position.x, position.y,targetX ), speed * Time.deltaTime);
+            obsHolder.transform.position = position;
+
+            if (obsHolder.transform.position.z == targetX)
+            {
+                _movingRight = !_movingRight;
+            }
+        }
+
+
+
+        #region Button Controls
+
+        public void OnClickedTapToPlayButton()
+        {
+            StartTheGame();
+            isGameStarted = !isGameStarted;
+        }
+
+        public void OnClickedInGameBackButton()
+        {
+            backToMenuPanel.SetActive(true);
+        }
+
+        #endregion
     }
-
-
-
-    #region Button Controls
-
-    public void OnClickedTapToPlayButton()
-    {
-        StartTheGame();
-        isGameStarted = !isGameStarted;
-    }
-
-    public void OnClickedInGameBackButton()
-    {
-        BackToMenuPanel.SetActive(true);
-    }
-
-    #endregion
 }

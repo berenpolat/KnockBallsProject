@@ -324,11 +324,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  bestScore: 0
   isGameStarted: 0
-  ObsHolder: {fileID: 630566424}
-  StartPanel: {fileID: 1886355500}
-  InGamePanel: {fileID: 640077740}
-  BackToMenuPanel: {fileID: 617509724}
+  obsHolder: {fileID: 630566424}
+  startPanel: {fileID: 1886355500}
+  "\u0131nGamePanel": {fileID: 640077740}
+  backToMenuPanel: {fileID: 617509724}
+  lvlText: {fileID: 707393927}
+  bestScoreText: {fileID: 1546806516}
 --- !u!1 &254227091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl. 1
+  m_Text: Lvl. 0
 --- !u!222 &707393928
 CanvasRenderer:
   m_ObjectHideFlags: 0

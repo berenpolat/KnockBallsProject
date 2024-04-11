@@ -6,6 +6,10 @@ namespace Managers
     {
         void Update()
         {
+            if (GameManager.Instance.level == 0)
+            {
+                
+            }
             if (GameManager.Instance.level == 1)
             {
                 
