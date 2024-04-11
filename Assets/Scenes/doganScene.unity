@@ -324,11 +324,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  bestScore: 0
   isGameStarted: 0
-  ObsHolder: {fileID: 0}
-  StartPanel: {fileID: 1886355500}
-  InGamePanel: {fileID: 640077740}
-  BackToMenuPanel: {fileID: 617509724}
+  obsHolder: {fileID: 0}
+  startPanel: {fileID: 0}
+  "\u0131nGamePanel": {fileID: 0}
+  backToMenuPanel: {fileID: 0}
+  levelTreePanel: {fileID: 0}
+  lvlText: {fileID: 0}
+  bestScoreText: {fileID: 0}
 --- !u!1 &254227091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d546835eb7a3942a51db77eb0ac987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl1Button: {fileID: 0}
+  lvl2Button: {fileID: 0}
+  lvl3Button: {fileID: 0}
+  inGameLvlText: {fileID: 0}
+  inGameNextLvlText: {fileID: 0}
 --- !u!1 &1013130972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,7 +3356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0cf1a83249328344a90feb7bdf5eb133, type: 2}
+      objectReference: {fileID: 2100000, guid: 772de7a3f0b067d4cb88dc8c97326f1a, type: 2}
     - target: {fileID: 7202271454713460447, guid: 92cc92f4346a72e45a8c220ce65f86d2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
