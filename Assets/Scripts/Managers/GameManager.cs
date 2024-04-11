@@ -72,8 +72,8 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
-            level++;
-            PlayerPrefs.SetInt("level",1);
+            level=2;
+            PlayerPrefs.SetInt("level",2);
         }
 
         private void MoveObsHolderAtTheStart()
@@ -111,7 +111,6 @@ namespace Managers
         public void OnClickLevelTreeDisplayButton()
         {
             levelTreePanel.SetActive(true);
-            Debug.Log("skdfh");
         }
 
         public void OnClickCancelLevelTreeButton()
