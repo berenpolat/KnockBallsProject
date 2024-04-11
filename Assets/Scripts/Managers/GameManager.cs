@@ -20,6 +20,7 @@ namespace Managers
         [SerializeField] private GameObject startPanel;
         [SerializeField] private GameObject ınGamePanel;
         [SerializeField] private GameObject backToMenuPanel;
+        [SerializeField] private GameObject levelTreePanel;
     
 
         #endregion
@@ -107,6 +108,16 @@ namespace Managers
             backToMenuPanel.SetActive(true);
         }
 
+        public void OnClickLevelTreeDisplayButton()
+        {
+            levelTreePanel.SetActive(true);
+            Debug.Log("skdfh");
+        }
+
+        public void OnClickCancelLevelTreeButton()
+        {
+            levelTreePanel.SetActive(false);
+        }
         #endregion
     }
 }
