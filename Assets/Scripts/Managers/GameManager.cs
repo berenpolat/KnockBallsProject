@@ -64,6 +64,8 @@ namespace Managers
             if(!isGameStarted) MoveObsHolderAtTheStart();
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
+            level=2;
+            PlayerPrefs.SetInt("level",2);
         }
         #endregion
 
@@ -72,8 +74,7 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
-            level=2;
-            PlayerPrefs.SetInt("level",2);
+            
         }
 
         private void MoveObsHolderAtTheStart()
