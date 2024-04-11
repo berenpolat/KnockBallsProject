@@ -58,5 +58,22 @@ namespace Managers
                 inGameNextLvlText.text = "4";
             }
         }
+        
+        #region Level Button Controllers
+
+        public void OnClickedLevel1Button()
+        {
+            Debug.Log("Level 1");
+        }
+        public void OnClickedLevel2Button()
+        {
+            Debug.Log("Level 2");
+        }
+        public void OnClickedLevel3Button()
+        {
+            Debug.Log("Level 3");
+        }
+
+        #endregion
     }
 }

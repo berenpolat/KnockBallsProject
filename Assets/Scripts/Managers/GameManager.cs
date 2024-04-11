@@ -93,8 +93,7 @@ namespace Managers
                 _movingRight = !_movingRight;
             }
         }
-
-
+        
 
         #region Button Controls
 
