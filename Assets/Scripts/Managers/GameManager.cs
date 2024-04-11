@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     public int level;
     public bool isGameStarted;
     [SerializeField] private GameObject ObsHolder;
-    private bool movingForward = true;
-
+    private bool movingRight = true;
     #endregion
 
     #region Panels
@@ -46,13 +45,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveObsHolderAtTheStart();
+        if(!isGameStarted) MoveObsHolderAtTheStart();
     }
     #endregion
 
@@ -60,25 +59,22 @@ public class GameManager : MonoBehaviour
     {
         StartPanel.SetActive(false);
         InGamePanel.SetActive(true);
+        ObsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
     }
 
     private void MoveObsHolderAtTheStart()
     {
-        float distance = 5f;
-        float duration = 1f;
-
-        if (movingForward)
+        float speed = 1.0f;
+        float minX = -3.0f;
+        float maxX = 3.0f;
+        
+        float targetX = movingRight ? maxX : minX;
+        ObsHolder.transform.position = Vector3.MoveTowards(ObsHolder.transform.position, new Vector3(ObsHolder.transform.position.x, ObsHolder.transform.position.y,targetX ), speed * Time.deltaTime);
+        
+        if (ObsHolder.transform.position.z == targetX)
         {
-            ObsHolder.transform.DOMoveZ(ObsHolder.transform.position.z + distance, duration);
-            movingForward = !movingForward;
+            movingRight = !movingRight;
         }
-        else
-        {
-            ObsHolder.transform.DOMoveZ(ObsHolder.transform.position.z - distance, duration);
-            movingForward = !movingForward;
-        }
-
-        movingForward = !movingForward;
     }
 
 
