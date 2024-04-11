@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +10,11 @@ public class GameManager : MonoBehaviour
 
     public int level;
     public bool isGameStarted;
-    
+    [SerializeField] private GameObject ObsHolder;
+    private bool movingForward = true;
 
     #endregion
-    
+
     #region Panels
     [SerializeField] private GameObject StartPanel;
     [SerializeField] private GameObject InGamePanel;
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        MoveObsHolderAtTheStart();
     }
     #endregion
 
@@ -58,7 +61,27 @@ public class GameManager : MonoBehaviour
         StartPanel.SetActive(false);
         InGamePanel.SetActive(true);
     }
-    
+
+    private void MoveObsHolderAtTheStart()
+    {
+        float distance = 5f;
+        float duration = 1f;
+
+        if (movingForward)
+        {
+            ObsHolder.transform.DOMoveZ(ObsHolder.transform.position.z + distance, duration);
+            movingForward = !movingForward;
+        }
+        else
+        {
+            ObsHolder.transform.DOMoveZ(ObsHolder.transform.position.z - distance, duration);
+            movingForward = !movingForward;
+        }
+
+        movingForward = !movingForward;
+    }
+
+
 
     #region Button Controls
 
