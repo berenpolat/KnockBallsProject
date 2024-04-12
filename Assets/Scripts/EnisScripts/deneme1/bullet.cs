@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class bullet : MonoBehaviour, Ibullets
+public  class bullet : MonoBehaviour, Ibullets
 {
    
 
     public void OnObjectSpawn()
    {
-    
+     Debug.Log("yöntem1");
    }
 }
