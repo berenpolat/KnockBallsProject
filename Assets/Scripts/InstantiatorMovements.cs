@@ -24,6 +24,7 @@ public class InstantiatorMovements : MonoBehaviour
 
             MyObject ball = factory.CreateObject<MyObject>(spawnPoint);
             Vector3 direction = targetPosition - spawnPoint.position;
+            direction.z *= -1;
             ball.GetComponent<Rigidbody>().AddForce(direction.normalized * 15f, ForceMode.Impulse);
         }
     }
