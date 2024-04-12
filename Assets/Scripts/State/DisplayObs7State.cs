@@ -11,7 +11,7 @@ namespace State
         public override Task RunStateAsync(CancellationToken cancellationToken = default)
         {
             Debug.Log("Obs 7");
-            return Task.CompletedTask;
+            return null;
         }
     }
 }

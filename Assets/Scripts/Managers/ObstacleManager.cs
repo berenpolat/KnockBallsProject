@@ -7,20 +7,32 @@ namespace Managers
    public class ObstacleManager : MonoBehaviour
    {
       #region Obstacle Prefs
-
-      public GameObject normalObs;
-      public GameObject cubeObs;
-      public GameObject sphereObs;
-
-      public List<GameObject> lvl1Obs;
+      [Header("Level1 Obs")]
+      public List<GameObject> lvl1Obs1;
+      public List<GameObject> lvl1Obs2;
+      public List<GameObject> lvl1Obs3;
+      public List<GameObject> lvl1Obs4;
+      public List<GameObject> lvl1Obs5;
+      public List<GameObject> lvl1Obs6;
+      public List<GameObject> lvl1Obs7;
+      [Header("Level2 Obs")]
+      public List<GameObject> lvl2Obs1;
+      public List<GameObject> lvl2Obs2;
+      public List<GameObject> lvl2Obs3;
+      public List<GameObject> lvl2Obs4;
+      public List<GameObject> lvl2Obs5;
+      public List<GameObject> lvl2Obs6;
+      public List<GameObject> lvl2Obs7;
+      [Header("Level3 Obs")]
+      public List<GameObject> lvl3Obs1;
+      public List<GameObject> lvl3Obs2;
+      public List<GameObject> lvl3Obs3;
+      public List<GameObject> lvl3Obs4;
+      public List<GameObject> lvl3Obs5;
+      public List<GameObject> lvl3Obs6;
+      public List<GameObject> lvl3Obs7;
       #endregion
-
-      private void Start()
-      {
-         lvl1Obs.Add(normalObs);
-         lvl1Obs.Add(cubeObs);
-         lvl1Obs.Add(sphereObs);
-      }
+      
 
       #region Singleton
       public static ObstacleManager Instance { get; set; }

@@ -16,16 +16,25 @@ public class InstantiatorMovements : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameManager.Instance.isGameStarted)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && GameManager.Instance.isGameStarted)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = Camera.main.nearClipPlane*-1f; // Set the z-coordinate to the near clip plane distance
-            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            // Get the touch position in world coordinates
+            Vector3 touchPosition = Input.GetTouch(0).position;
+            touchPosition.z = Camera.main.nearClipPlane; // Set the z-coordinate to the near clip plane distance
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(touchPosition);
 
-            MyObject ball = factory.CreateObject<MyObject>(spawnPoint);
+            // Keep the y-component fixed (same as spawnPoint's y)
+            targetPosition.y = spawnPoint.position.y;
+
+            // Keep the x-component fixed (same as spawnPoint's x)
+            targetPosition.x = spawnPoint.position.x;
+
+            // Calculate the direction from spawnPoint to targetPosition
             Vector3 direction = targetPosition - spawnPoint.position;
             direction.z *= -1;
-            ball.GetComponent<Rigidbody>().AddForce(direction.normalized * 15f, ForceMode.Impulse);
+            // Create the ball and apply force
+            MyObject ball = factory.CreateObject<MyObject>(spawnPoint);
+            ball.GetComponent<Rigidbody>().AddForce(direction.normalized * 30f, ForceMode.Impulse);
         }
     }
 }

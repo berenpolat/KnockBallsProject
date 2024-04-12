@@ -62,6 +62,7 @@ namespace Managers
         // Start is called before the first frame update
         void Start()
         {
+            level = 0;
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");

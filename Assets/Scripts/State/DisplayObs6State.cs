@@ -11,18 +11,7 @@ namespace State
         public override Task RunStateAsync(CancellationToken cancellationToken = default)
         {
             Debug.Log("Obs 6");
-            if (isShot6)
-            {
-                Context.TransitionTo(new DisplayObs7State());
-                _ = Context.CurrentState.RunStateAsync(cancellationToken);
-                return Task.CompletedTask;
-            }
-            else
-            {
-                Context.TransitionTo(new FailLevelState());
-                _ = Context.CurrentState.RunStateAsync(cancellationToken);
-                return Task.CompletedTask;
-            }
+            return null;
         }
     }
 }
