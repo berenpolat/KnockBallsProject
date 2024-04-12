@@ -73,8 +73,8 @@ namespace Managers
             if(!isGameStarted) MoveObsHolderAtTheStart();
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
-            level=2;
-            PlayerPrefs.SetInt("level",2);
+            level=0;
+            PlayerPrefs.SetInt("level",0);
         }
         #endregion
 
