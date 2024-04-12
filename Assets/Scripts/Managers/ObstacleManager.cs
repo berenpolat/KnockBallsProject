@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Managers
@@ -10,10 +12,16 @@ namespace Managers
       public GameObject cubeObs;
       public GameObject sphereObs;
 
-
+      public List<GameObject> lvl1Obs;
       #endregion
-   
-      
+
+      private void Start()
+      {
+         lvl1Obs.Add(normalObs);
+         lvl1Obs.Add(cubeObs);
+         lvl1Obs.Add(sphereObs);
+      }
+
       #region Singleton
       public static ObstacleManager Instance { get; set; }
     

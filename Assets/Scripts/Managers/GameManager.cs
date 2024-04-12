@@ -1,4 +1,7 @@
+using System.Threading;
+using Base.State;
 using DG.Tweening;
+using State;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -11,11 +14,15 @@ namespace Managers
 
         public int level;
         public int bestScore;
+        public int coin;
         public bool isGameStarted;
         [SerializeField] private GameObject obsHolder;
         private bool _movingRight = true;
         #endregion
-
+        private CancellationTokenSource StateCancellationTokenSource { get; set; } = null!;
+        public static CancellationTokenSource GeneralCancellationTokenSource { get; } = new CancellationTokenSource();
+        private IContext _finalContext = null!;
+        
         #region Panels
         [SerializeField] private GameObject startPanel;
         [SerializeField] private GameObject ınGamePanel;
@@ -51,11 +58,13 @@ namespace Managers
         #endregion
     
         #region Unity Methods
+        
         // Start is called before the first frame update
         void Start()
         {
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
+            coin = PlayerPrefs.GetInt("coin");
         }
 
         // Update is called once per frame
@@ -74,7 +83,11 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
-            
+            StateCancellationTokenSource = CancellationTokenSource.CreateLinkedTokenSource(GeneralCancellationTokenSource.Token);
+            _finalContext = new Context();
+            _finalContext.TransitionTo(new DisplayObs1State());
+            _ = _finalContext.RunStateAsync(StateCancellationTokenSource.Token);
+
         }
 
         private void MoveObsHolderAtTheStart()
