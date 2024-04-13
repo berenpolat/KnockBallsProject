@@ -325,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   bestScore: 0
+  coin: 0
   isGameStarted: 0
   obsHolder: {fileID: 0}
   startPanel: {fileID: 0}
@@ -1500,6 +1501,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640077740}
   m_CullTransparentMesh: 1
+--- !u!1001 &698134507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.42
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.123417124
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.12337405
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6961352
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6963783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 159.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 810dcc9bdbfa0ea4aafb1dd6a308e6cb, type: 2}
+    - target: {fileID: 919132149155446097, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_Name
+      value: BallBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24b27974a83e8014aabc22682d4d29d9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24b27974a83e8014aabc22682d4d29d9, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,8 +2417,16 @@ MonoBehaviour:
   lvl1Button: {fileID: 0}
   lvl2Button: {fileID: 0}
   lvl3Button: {fileID: 0}
+  isObs11Complete: 0
+  isObs12Complete: 0
+  isObs13Complete: 0
+  isObs14Complete: 0
+  isObs15Complete: 0
+  isObs16Complete: 0
+  isObs17Complete: 0
   inGameLvlText: {fileID: 0}
   inGameNextLvlText: {fileID: 0}
+  counter: 0
 --- !u!1 &1013130972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,9 +4094,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ca6e5f1613dc64589eb49fb2da21f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalObs: {fileID: 0}
-  cubeObs: {fileID: 0}
-  sphereObs: {fileID: 0}
+  lvl1Obs1: []
+  lvl1Obs2: []
+  lvl1Obs3: []
+  lvl1Obs4: []
+  lvl1Obs5: []
+  lvl1Obs6: []
+  lvl1Obs7: []
+  lvl2Obs1: []
+  lvl2Obs2: []
+  lvl2Obs3: []
+  lvl2Obs4: []
+  lvl2Obs5: []
+  lvl2Obs6: []
+  lvl2Obs7: []
+  lvl3Obs1: []
+  lvl3Obs2: []
+  lvl3Obs3: []
+  lvl3Obs4: []
+  lvl3Obs5: []
+  lvl3Obs6: []
+  lvl3Obs7: []
 --- !u!1 &1875065220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,3 +4624,4 @@ SceneRoots:
   - {fileID: 988887074}
   - {fileID: 879014174}
   - {fileID: 343818677}
+  - {fileID: 698134507}
