@@ -95,6 +95,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs2[i].SetActive(true);
                             }
                             isObs2Complete = true;
+                            GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                         }
                     
                     }
@@ -126,6 +127,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs3[i].SetActive(true);
                             }
                             isObs3Complete = true;
+                            GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                         }
                     
                     }
@@ -157,6 +159,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs4[i].SetActive(true);
                             }
                             isObs4Complete = true;  
+                            GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                         }
                     
                     }
@@ -188,6 +191,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs5[i].SetActive(true);
                             }
                             isObs5Complete = true;  
+                            GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                         }
                     
                     }
@@ -220,6 +224,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs6[i].SetActive(true);
                             }
                             isObs6Complete = true;  
+                            GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                         }
                     
                     }
@@ -251,6 +256,7 @@ namespace Managers
                                 ObstacleManager.Instance.lvl1Obs7[i].SetActive(true);
                             }
                             isObs7Complete = true;  
+                            GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                         }
                     
                     }
@@ -274,6 +280,7 @@ namespace Managers
                         
                         if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
                         {
+                            GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                             Debug.Log("All of them has felt at Obs1");
                             isObs7Complete = false;
                             Debug.Log("LEVEL 1 HAS ENDED");

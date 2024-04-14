@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using Base.State;
 using DG.Tweening;
@@ -30,6 +31,12 @@ namespace Managers
         [SerializeField] private GameObject levelTreePanel;
         public GameObject failPanel;
     
+
+        #endregion
+
+        #region LevelSliderImages
+
+        public List<Image> levelSliderBlocks;
 
         #endregion
 
