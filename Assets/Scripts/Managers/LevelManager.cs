@@ -234,6 +234,8 @@ namespace Managers
                         Debug.Log("All of them has felt at Obs1");
                         isObs7Complete = false;
                         Debug.Log("LEVEL 1 HAS ENDED");
+                        GameManager.Instance.level = 1;
+                        PlayerPrefs.SetInt("level", 1);
                     }
                     
                 }
