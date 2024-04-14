@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +26,30 @@ namespace Managers
         {
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
-            isGame0 = true;
-            isObs1Complete = true;
+            if (GameManager.Instance.level == 0)
+            {
+                isGame0 = true;
+                isObs1Complete = true;
+                for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
+                }
+            }
+
+            if (GameManager.Instance.level == 1)
+            {
+                isLevel1Complete = true;
+                isObs1Complete = true;
+                for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl1Obs1[i].SetActive(false);
+                }
+                for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
+                }
+            }
+            
         }
 
         private void Update()
@@ -36,6 +59,7 @@ namespace Managers
             {
                 if (isGame0 && GameManager.Instance.isGameStarted)
                 {
+                    Debug.Log("Level 1");
                 
                     //1ST OBS
                     shot11 = 4;
@@ -243,6 +267,13 @@ namespace Managers
                             GameManager.Instance.level = 1;
                             PlayerPrefs.SetInt("level", 1);
                             GameManager.Instance.StopTheGame();
+                            GameManager.Instance.isGameStarted = false;
+                            isGame0 = false;
+                            isLevel1Complete = true;
+                            for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
+                            }
                         }
                     
                     }
@@ -250,6 +281,7 @@ namespace Managers
                     {
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
+                        GameManager.Instance.isGameStarted = false;
                     }
                 }
             }
@@ -257,10 +289,10 @@ namespace Managers
             //LVL 2
             
 
-            if (GameManager.Instance.level == 1)
+            if (GameManager.Instance.level == 1 && GameManager.Instance.isGameStarted)
             {
-                 
-             if (isGame0 && GameManager.Instance.isGameStarted)
+                Debug.Log("Level 2");
+             if (isLevel1Complete && GameManager.Instance.isGameStarted)
              {
                 
                  //1ST OBS
@@ -465,7 +497,7 @@ namespace Managers
                      {
                          Debug.Log("All of them has felt at Obs1");
                          isObs7Complete = false;
-                         Debug.Log("LEVEL 1 HAS ENDED");
+                         Debug.Log("LEVEL 2 HAS ENDED");
                          GameManager.Instance.level = 2;
                          PlayerPrefs.SetInt("level", 2);
                          GameManager.Instance.StopTheGame();
@@ -495,9 +527,8 @@ namespace Managers
         }
         private void UpdateLevelUI()
         {
-            GameManager gm = GameManager.Instance;
 
-            if (gm.level == 0 && gm.isGameStarted)
+            if (GameManager.Instance.level == 0 && GameManager.Instance.isGameStarted)
             {
                 UpdateLevelButtonState(lvl1Button, true);
                 UpdateLevelButtonState(lvl2Button, false);
@@ -505,7 +536,7 @@ namespace Managers
 
                 SetLevelText(0, 1);
             }
-            else if (gm.level == 1)
+            else if (GameManager.Instance.level == 1)
             {
                 UpdateLevelButtonState(lvl1Button, false);
                 UpdateLevelButtonState(lvl2Button, true);
@@ -513,7 +544,7 @@ namespace Managers
 
                 SetLevelText(1, 2);
             }
-            else if (gm.level == 2)
+            else if (GameManager.Instance.level == 2)
             {
                 UpdateLevelButtonState(lvl1Button, false);
                 UpdateLevelButtonState(lvl2Button, false);
@@ -521,7 +552,7 @@ namespace Managers
 
                 SetLevelText(2, 3);
             }
-            else if (gm.level == 3)
+            else if (GameManager.Instance.level == 3)
             {
                 SetLevelText(3, 4);
             }
