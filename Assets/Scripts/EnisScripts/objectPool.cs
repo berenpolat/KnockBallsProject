@@ -7,8 +7,7 @@ public class objectPool : MonoBehaviour
 {
     public static objectPool instance;
     private List<GameObject> pooledObjects = new List<GameObject>();
-    private int amountToPool = 20;
-
+    [SerializeField] private int amountToPool = 20;
     [SerializeField] private GameObject bulletPrefab;
 
     private void Awake()
@@ -24,7 +23,7 @@ public class objectPool : MonoBehaviour
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            GameObject obj = Instantiate(bulletPrefab);
+            GameObject obj = Instantiate(bulletPrefab); //factory ile spawn et 
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }

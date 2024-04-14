@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,24 @@ using UnityEngine;
 public class Bullet2Deneme : MonoBehaviour
 {
     private float speed = 24f;
-
+     
     [SerializeField] private Rigidbody rb;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        rb.velocity = Vector3.forward * speed;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void Update()
     {
-        if(other.gameObject.CompareTag("wall"))
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("wall"))
         {
             gameObject.SetActive(false);
         }
     }
+
 }

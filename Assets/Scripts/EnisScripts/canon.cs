@@ -5,33 +5,38 @@ using UnityEngine;
 
 public class canon : MonoBehaviour
 {
- 
-   
-
-   
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletPosition;
+    public Plane plane = new Plane(Vector3.forward, 0);
+    private Vector3 dir;
+    [SerializeField] private float bulletSpeed;
 
     private void Update()
     {
-   
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        float distance;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (plane.Raycast(ray, out distance))
         {
-            Fire();
+            Vector3 point = ray.GetPoint(distance);
+            transform.LookAt(point); // Kanonun hedefe bakmasını sağlar
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Fire(point);
+            }
         }
     }
-
-   
-
-    private void Fire()
+    
+    private void Fire(Vector3 targetPosition)
     {
+        dir = targetPosition - bulletPosition.position;
+        
         GameObject bullet = objectPool.instance.getPooledObject();
 
         if (bullet != null)
         {
             bullet.transform.position = bulletPosition.position;
             bullet.SetActive(true);
+            bullet.GetComponent<Rigidbody>().velocity = dir.normalized * bulletSpeed; 
         }
     }
 }
