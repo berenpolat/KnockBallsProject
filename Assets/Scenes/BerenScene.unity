@@ -746,10 +746,10 @@ MonoBehaviour:
   failPanel: {fileID: 77880664}
   levelSliderBlocks:
   - {fileID: 583084613}
-  - {fileID: 340013556}
   - {fileID: 396674023}
-  - {fileID: 465949609}
   - {fileID: 254227093}
+  - {fileID: 340013556}
+  - {fileID: 465949609}
   - {fileID: 1736217586}
   - {fileID: 364914376}
   lvlText: {fileID: 707393927}

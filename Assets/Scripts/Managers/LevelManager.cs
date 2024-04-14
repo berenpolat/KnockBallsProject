@@ -280,7 +280,7 @@ namespace Managers
                         
                         if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
                         {
-                            GameManager.Instance.levelSliderBlocks[5].color= Color.red;
+                            GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                             Debug.Log("All of them has felt at Obs1");
                             isObs7Complete = false;
                             Debug.Log("LEVEL 1 HAS ENDED");
@@ -293,6 +293,11 @@ namespace Managers
                             for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count(); i++)
                             {
                                 ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
+                            }
+
+                            for (int i = 0; i < GameManager.Instance.levelSliderBlocks.Count; i++)
+                            {
+                                GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                             }
                         }
                     
@@ -529,6 +534,16 @@ namespace Managers
                          PlayerPrefs.SetInt("level", 2);
                          GameManager.Instance.StopTheGame();
                          isLevel2Complete = true;
+                         isLevel1Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
+                         }
+                         
+                         for (int i = 0; i < GameManager.Instance.levelSliderBlocks.Count; i++)
+                         {
+                             GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
+                         }
                      }
                     
                  }
@@ -764,6 +779,16 @@ namespace Managers
                          PlayerPrefs.SetInt("level", 3);
                          GameManager.Instance.StopTheGame();
                          isLevel3Complete = true;
+                         isLevel2Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
+                         }
+                         
+                         for (int i = 0; i < GameManager.Instance.levelSliderBlocks.Count; i++)
+                         {
+                             GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
+                         }
                      }
                     
                  }
