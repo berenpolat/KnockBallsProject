@@ -328,13 +328,13 @@ MonoBehaviour:
   bestScore: 0
   coin: 0
   isGameStarted: 0
-  obsHolder: {fileID: 0}
-  startPanel: {fileID: 0}
-  "\u0131nGamePanel": {fileID: 0}
-  backToMenuPanel: {fileID: 0}
-  levelTreePanel: {fileID: 0}
-  lvlText: {fileID: 0}
-  bestScoreText: {fileID: 0}
+  obsHolder: {fileID: 1886355500}
+  startPanel: {fileID: 1886355500}
+  "\u0131nGamePanel": {fileID: 131414231}
+  backToMenuPanel: {fileID: 131414231}
+  levelTreePanel: {fileID: 131414231}
+  lvlText: {fileID: 2086342784}
+  bestScoreText: {fileID: 2086342784}
 --- !u!1 &269605031
 GameObject:
   m_ObjectHideFlags: 0
