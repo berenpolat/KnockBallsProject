@@ -216,6 +216,31 @@ namespace Managers
                 {
                     Debug.Log("Not all of them has dropped");
                 }
+                //7th OBS
+                shot17 = 4;
+                int counter17 = 0;
+                if (isObs7Complete && shot17 != 0)
+                {
+                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs7.Count; j++)
+                    {
+                        if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= 0f)
+                        {
+                            counter17++;
+                        }
+                    }
+                        
+                    if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
+                    {
+                        Debug.Log("All of them has felt at Obs1");
+                        isObs7Complete = false;
+                        Debug.Log("LEVEL 1 HAS ENDED");
+                    }
+                    
+                }
+                if(shot16==0 && counter16!=6)
+                {
+                    Debug.Log("Not all of them has dropped");
+                }
             }
         }
 
