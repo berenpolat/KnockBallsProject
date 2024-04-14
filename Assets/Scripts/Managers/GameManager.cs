@@ -84,11 +84,6 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
-            StateCancellationTokenSource = CancellationTokenSource.CreateLinkedTokenSource(GeneralCancellationTokenSource.Token);
-            _finalContext = new Context();
-            _finalContext.TransitionTo(new DisplayObs1State());
-            _ = _finalContext.RunStateAsync(StateCancellationTokenSource.Token);
-
         }
 
         private void MoveObsHolderAtTheStart()
@@ -132,5 +127,7 @@ namespace Managers
             levelTreePanel.SetActive(false);
         }
         #endregion
+        
+        
     }
 }
