@@ -12,7 +12,7 @@ namespace Managers
     {
         #region General Variables
 
-        public int level;
+        public int level =0;
         public int bestScore;
         public int coin;
         public bool isGameStarted;
@@ -28,6 +28,7 @@ namespace Managers
         [SerializeField] private GameObject ınGamePanel;
         [SerializeField] private GameObject backToMenuPanel;
         [SerializeField] private GameObject levelTreePanel;
+        public GameObject failPanel;
     
 
         #endregion
@@ -62,7 +63,6 @@ namespace Managers
         // Start is called before the first frame update
         void Start()
         {
-            level = 0;
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
@@ -74,8 +74,6 @@ namespace Managers
             if(!isGameStarted) MoveObsHolderAtTheStart();
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
-            level=0;
-            PlayerPrefs.SetInt("level",0);
         }
         #endregion
 
@@ -84,6 +82,13 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
+        }
+
+        public void StopTheGame()
+        {
+            startPanel.SetActive(true);
+            ınGamePanel.SetActive(false);
+            MoveObsHolderAtTheStart();
         }
 
         private void MoveObsHolderAtTheStart()

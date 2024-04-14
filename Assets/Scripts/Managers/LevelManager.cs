@@ -63,7 +63,7 @@ namespace Managers
                 if(shot11==0 && counter11!=6)
                 {
                     Debug.Log("Not all of them has dropped");
-                    //FAIL PANEL IS ON
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
 
                 //2ND OBS
@@ -94,6 +94,7 @@ namespace Managers
                 if(shot12==0 && counter12!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
                 
                 //3RD OBS
@@ -124,6 +125,7 @@ namespace Managers
                 if(shot13==0 && counter13!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
                 
                 //4th OBS
@@ -154,6 +156,7 @@ namespace Managers
                 if(shot14==0 && counter14!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
                
                 
@@ -185,6 +188,7 @@ namespace Managers
                 if(shot15==0 && counter15!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
                 
                 //6th OBS
@@ -215,6 +219,7 @@ namespace Managers
                 if(shot16==0 && counter16!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
                 //7th OBS
                 shot17 = 4;
@@ -236,12 +241,14 @@ namespace Managers
                         Debug.Log("LEVEL 1 HAS ENDED");
                         GameManager.Instance.level = 1;
                         PlayerPrefs.SetInt("level", 1);
+                        GameManager.Instance.StopTheGame();
                     }
                     
                 }
                 if(shot16==0 && counter16!=6)
                 {
                     Debug.Log("Not all of them has dropped");
+                    GameManager.Instance.failPanel.SetActive(true);
                 }
             }
         }
