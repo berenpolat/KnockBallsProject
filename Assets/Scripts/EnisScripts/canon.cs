@@ -18,9 +18,9 @@ public class canon : MonoBehaviour
         if (plane.Raycast(ray, out distance))
         {
             Vector3 point = ray.GetPoint(distance);
-            transform.LookAt(point); // Kanonun hedefe bakmasını sağlar
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                transform.LookAt(point); // Kanonun hedefe bakmasını sağlar
                 Fire(point);
             }
         }
