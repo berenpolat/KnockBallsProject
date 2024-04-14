@@ -743,6 +743,7 @@ MonoBehaviour:
   "\u0131nGamePanel": {fileID: 640077740}
   backToMenuPanel: {fileID: 617509724}
   levelTreePanel: {fileID: 1987912626}
+  failPanel: {fileID: 77880664}
   lvlText: {fileID: 707393927}
   bestScoreText: {fileID: 1546806516}
 --- !u!1 &245797809

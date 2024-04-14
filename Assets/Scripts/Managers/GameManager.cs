@@ -88,7 +88,6 @@ namespace Managers
         {
             startPanel.SetActive(true);
             ınGamePanel.SetActive(false);
-            MoveObsHolderAtTheStart();
         }
 
         private void MoveObsHolderAtTheStart()

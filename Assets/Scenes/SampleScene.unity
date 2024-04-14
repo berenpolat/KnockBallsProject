@@ -1998,16 +1998,82 @@ MonoBehaviour:
   - {fileID: 1963824410}
   - {fileID: 1460220488}
   - {fileID: 2105042432}
-  lvl1Obs5: []
-  lvl1Obs6: []
-  lvl1Obs7: []
-  lvl2Obs1: []
-  lvl2Obs2: []
-  lvl2Obs3: []
-  lvl2Obs4: []
-  lvl2Obs5: []
-  lvl2Obs6: []
-  lvl2Obs7: []
+  lvl1Obs5:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl1Obs6:
+  - {fileID: 1560271656}
+  - {fileID: 1327278327}
+  - {fileID: 1601571342}
+  - {fileID: 1980174573}
+  - {fileID: 1051044518}
+  - {fileID: 325088068}
+  lvl1Obs7:
+  - {fileID: 1288738632}
+  - {fileID: 590465837}
+  - {fileID: 1242638757}
+  - {fileID: 1769908644}
+  - {fileID: 746094293}
+  - {fileID: 1046143592}
+  lvl2Obs1:
+  - {fileID: 316883838}
+  - {fileID: 1087047693}
+  - {fileID: 1268422000}
+  - {fileID: 638111073}
+  - {fileID: 2004136387}
+  - {fileID: 1235766848}
+  - {fileID: 1277442931}
+  - {fileID: 2132133651}
+  - {fileID: 650318898}
+  - {fileID: 1042769346}
+  - {fileID: 1481472483}
+  - {fileID: 260751537}
+  lvl2Obs2:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl2Obs3:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl2Obs4:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl2Obs5:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl2Obs6:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
+  lvl2Obs7:
+  - {fileID: 1318392611}
+  - {fileID: 1351675915}
+  - {fileID: 1860621233}
+  - {fileID: 1963824410}
+  - {fileID: 1460220488}
+  - {fileID: 2105042432}
   lvl3Obs1: []
   lvl3Obs2: []
   lvl3Obs3: []
@@ -5258,6 +5324,7 @@ MonoBehaviour:
   "\u0131nGamePanel": {fileID: 1194063766}
   backToMenuPanel: {fileID: 1947388613}
   levelTreePanel: {fileID: 63507360}
+  failPanel: {fileID: 2117983146}
   lvlText: {fileID: 1692581241}
   bestScoreText: {fileID: 1887720805}
 --- !u!4 &799271661

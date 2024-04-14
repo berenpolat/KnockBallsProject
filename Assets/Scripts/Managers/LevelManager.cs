@@ -32,15 +32,16 @@ namespace Managers
         private void Update()
         {
             UpdateLevelUI();
-            
-            if (isGame0 && GameManager.Instance.isGameStarted)
+            if (GameManager.Instance.level == 0)
             {
-                
-                //1ST OBS
-                shot11 = 4;
-                int counter11 = 0;
-                if (isObs1Complete && shot11!=0)
+                if (isGame0 && GameManager.Instance.isGameStarted)
                 {
+                
+                    //1ST OBS
+                    shot11 = 4;
+                    int counter11 = 0;
+                    if (isObs1Complete && shot11!=0)
+                    {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs1.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs1[j].transform.localPosition.y <= 0f)
@@ -59,18 +60,18 @@ namespace Managers
                             isObs2Complete = true;
                         }
                     
-                }
-                if(shot11==0 && counter11!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
+                    }
+                    if(shot11==0 && counter11!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
 
-                //2ND OBS
-                shot12 = 4;
-                int counter12 = 0;
-                if (isObs2Complete && shot12 != 0)
-                {
+                    //2ND OBS
+                    shot12 = 4;
+                    int counter12 = 0;
+                    if (isObs2Complete && shot12 != 0)
+                    {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs2.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs2[j].transform.localPosition.y <= 0f)
@@ -90,170 +91,408 @@ namespace Managers
                             isObs3Complete = true;
                         }
                     
-                }
-                if(shot12==0 && counter12!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
+                    }
+                    if(shot12==0 && counter12!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
                 
-                //3RD OBS
-                shot13 = 4;
-                int counter13 = 0;
-                if (isObs3Complete && shot13 != 0)
-                {
-                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs3.Count; j++)
+                    //3RD OBS
+                    shot13 = 4;
+                    int counter13 = 0;
+                    if (isObs3Complete && shot13 != 0)
                     {
-                        if (ObstacleManager.Instance.lvl1Obs3[j].transform.localPosition.y <= 0f)
+                        for (int j = 0; j < ObstacleManager.Instance.lvl1Obs3.Count; j++)
                         {
-                            counter13++;
+                            if (ObstacleManager.Instance.lvl1Obs3[j].transform.localPosition.y <= 0f)
+                            {
+                                counter13++;
+                            }
                         }
-                    }
                         
-                    if (counter13 == ObstacleManager.Instance.lvl1Obs3.Count)
-                    {
-                        Debug.Log("All of them has felt at Obs1");
-                        isObs3Complete = false;
-                        for (int i = 0; i < ObstacleManager.Instance.lvl1Obs4.Count(); i++)
+                        if (counter13 == ObstacleManager.Instance.lvl1Obs3.Count)
                         {
-                            ObstacleManager.Instance.lvl1Obs4[i].SetActive(true);
+                            Debug.Log("All of them has felt at Obs1");
+                            isObs3Complete = false;
+                            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs4.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl1Obs4[i].SetActive(true);
+                            }
+                            isObs4Complete = true;  
                         }
-                        isObs4Complete = true;  
-                    }
                     
-                }
-                if(shot13==0 && counter13!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
+                    }
+                    if(shot13==0 && counter13!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
                 
-                //4th OBS
-                shot14 = 4;
-                int counter14 = 0;
-                if (isObs4Complete && shot14 != 0)
-                {
-                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs4.Count; j++)
+                    //4th OBS
+                    shot14 = 4;
+                    int counter14 = 0;
+                    if (isObs4Complete && shot14 != 0)
                     {
-                        if (ObstacleManager.Instance.lvl1Obs4[j].transform.localPosition.y <= 0f)
+                        for (int j = 0; j < ObstacleManager.Instance.lvl1Obs4.Count; j++)
                         {
-                            counter14++;
+                            if (ObstacleManager.Instance.lvl1Obs4[j].transform.localPosition.y <= 0f)
+                            {
+                                counter14++;
+                            }
                         }
-                    }
                         
-                    if (counter14 == ObstacleManager.Instance.lvl1Obs4.Count)
-                    {
-                        Debug.Log("All of them has felt at Obs1");
-                        isObs4Complete = false;
-                        for (int i = 0; i < ObstacleManager.Instance.lvl1Obs5.Count(); i++)
+                        if (counter14 == ObstacleManager.Instance.lvl1Obs4.Count)
                         {
-                            ObstacleManager.Instance.lvl1Obs5[i].SetActive(true);
+                            Debug.Log("All of them has felt at Obs1");
+                            isObs4Complete = false;
+                            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs5.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl1Obs5[i].SetActive(true);
+                            }
+                            isObs5Complete = true;  
                         }
-                        isObs5Complete = true;  
-                    }
                     
-                }
-                if(shot14==0 && counter14!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
+                    }
+                    if(shot14==0 && counter14!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
                
                 
-                //5th OBS
-                shot15 = 4;
-                int counter15 = 0;
-                if (isObs5Complete && shot15 != 0)
-                {
-                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs5.Count; j++)
+                    //5th OBS
+                    shot15 = 4;
+                    int counter15 = 0;
+                    if (isObs5Complete && shot15 != 0)
                     {
-                        if (ObstacleManager.Instance.lvl1Obs5[j].transform.localPosition.y <= 0f)
+                        for (int j = 0; j < ObstacleManager.Instance.lvl1Obs5.Count; j++)
                         {
-                            counter15++;
+                            if (ObstacleManager.Instance.lvl1Obs5[j].transform.localPosition.y <= 0f)
+                            {
+                                counter15++;
+                            }
                         }
-                    }
                         
-                    if (counter15 == ObstacleManager.Instance.lvl1Obs5.Count)
-                    {
-                        Debug.Log("All of them has felt at Obs1");
-                        isObs5Complete = false;
-                        for (int i = 0; i < ObstacleManager.Instance.lvl1Obs6.Count(); i++)
+                        if (counter15 == ObstacleManager.Instance.lvl1Obs5.Count)
                         {
-                            ObstacleManager.Instance.lvl1Obs6[i].SetActive(true);
+                            Debug.Log("All of them has felt at Obs1");
+                            isObs5Complete = false;
+                            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs6.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl1Obs6[i].SetActive(true);
+                            }
+                            isObs6Complete = true;  
                         }
-                        isObs6Complete = true;  
-                    }
                     
-                }
-                if(shot15==0 && counter15!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
+                    }
+                    if(shot15==0 && counter15!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
                 
-                //6th OBS
-                shot16 = 4;
-                int counter16 = 0;
-                if (isObs6Complete && shot16 != 0)
-                {
-                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs6.Count; j++)
+                    //6th OBS
+                    shot16 = 4;
+                    int counter16 = 0;
+                    if (isObs6Complete && shot16 != 0)
                     {
-                        if (ObstacleManager.Instance.lvl1Obs6[j].transform.localPosition.y <= 0f)
+                        for (int j = 0; j < ObstacleManager.Instance.lvl1Obs6.Count; j++)
                         {
-                            counter16++;
+                            if (ObstacleManager.Instance.lvl1Obs6[j].transform.localPosition.y <= 0f)
+                            {
+                                counter16++;
+                            }
                         }
-                    }
                         
-                    if (counter16 == ObstacleManager.Instance.lvl1Obs6.Count)
-                    {
-                        Debug.Log("All of them has felt at Obs1");
-                        isObs6Complete = false;
-                        for (int i = 0; i < ObstacleManager.Instance.lvl1Obs7.Count(); i++)
+                        if (counter16 == ObstacleManager.Instance.lvl1Obs6.Count)
                         {
-                            ObstacleManager.Instance.lvl1Obs7[i].SetActive(true);
+                            Debug.Log("All of them has felt at Obs1");
+                            isObs6Complete = false;
+                            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs7.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl1Obs7[i].SetActive(true);
+                            }
+                            isObs7Complete = true;  
                         }
-                        isObs7Complete = true;  
-                    }
                     
-                }
-                if(shot16==0 && counter16!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
-                }
-                //7th OBS
-                shot17 = 4;
-                int counter17 = 0;
-                if (isObs7Complete && shot17 != 0)
-                {
-                    for (int j = 0; j < ObstacleManager.Instance.lvl1Obs7.Count; j++)
-                    {
-                        if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= 0f)
-                        {
-                            counter17++;
-                        }
                     }
+                    if(shot16==0 && counter16!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
+                    //7th OBS
+                    shot17 = 4;
+                    int counter17 = 0;
+                    if (isObs7Complete && shot17 != 0)
+                    {
+                        for (int j = 0; j < ObstacleManager.Instance.lvl1Obs7.Count; j++)
+                        {
+                            if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= 0f)
+                            {
+                                counter17++;
+                            }
+                        }
                         
-                    if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
-                    {
-                        Debug.Log("All of them has felt at Obs1");
-                        isObs7Complete = false;
-                        Debug.Log("LEVEL 1 HAS ENDED");
-                        GameManager.Instance.level = 1;
-                        PlayerPrefs.SetInt("level", 1);
-                        GameManager.Instance.StopTheGame();
-                    }
+                        if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
+                        {
+                            Debug.Log("All of them has felt at Obs1");
+                            isObs7Complete = false;
+                            Debug.Log("LEVEL 1 HAS ENDED");
+                            GameManager.Instance.level = 1;
+                            PlayerPrefs.SetInt("level", 1);
+                            GameManager.Instance.StopTheGame();
+                        }
                     
-                }
-                if(shot16==0 && counter16!=6)
-                {
-                    Debug.Log("Not all of them has dropped");
-                    GameManager.Instance.failPanel.SetActive(true);
+                    }
+                    if(shot16==0 && counter16!=6)
+                    {
+                        Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.failPanel.SetActive(true);
+                    }
                 }
             }
+            
+            //LVL 2
+            
+
+            if (GameManager.Instance.level == 1)
+            {
+                 
+             if (isGame0 && GameManager.Instance.isGameStarted)
+             {
+                
+                 //1ST OBS
+                 shot11 = 4;
+                 int counter11 = 0;
+                 if (isObs1Complete && shot11!=0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs1.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs1[j].transform.localPosition.y <= 0f)
+                         {
+                             counter11++;
+                         }
+                     }
+                     if (counter11 == ObstacleManager.Instance.lvl2Obs1.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs1Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs2.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs2[i].SetActive(true);
+                         }
+                         isObs2Complete = true;
+                     }
+                    
+                 }
+                 if(shot11==0 && counter11!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+
+                 //2ND OBS
+                 shot12 = 4;
+                 int counter12 = 0;
+                 if (isObs2Complete && shot12 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs2.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs2[j].transform.localPosition.y <= 0f)
+                         {
+                             counter12++;
+                         }
+                     }
+                        
+                     if (counter12 == ObstacleManager.Instance.lvl2Obs2.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs2Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs3.Count; i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs3[i].SetActive(true);
+                         }
+                         isObs3Complete = true;
+                     }
+                    
+                 }
+                 if(shot12==0 && counter12!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+                
+                 //3RD OBS
+                 shot13 = 4;
+                 int counter13 = 0;
+                 if (isObs3Complete && shot13 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs3.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs3[j].transform.localPosition.y <= 0f)
+                         {
+                             counter13++;
+                         }
+                     }
+                        
+                     if (counter13 == ObstacleManager.Instance.lvl2Obs3.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs3Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs4.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs4[i].SetActive(true);
+                         }
+                         isObs4Complete = true;  
+                     }
+                    
+                 }
+                 if(shot13==0 && counter13!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+                
+                 //4th OBS
+                 shot14 = 4;
+                 int counter14 = 0;
+                 if (isObs4Complete && shot14 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs4.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs4[j].transform.localPosition.y <= 0f)
+                         {
+                             counter14++;
+                         }
+                     }
+                        
+                     if (counter14 == ObstacleManager.Instance.lvl2Obs4.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs4Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs5.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs5[i].SetActive(true);
+                         }
+                         isObs5Complete = true;  
+                     }
+                    
+                 }
+                 if(shot14==0 && counter14!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+               
+                
+                 //5th OBS
+                 shot15 = 4;
+                 int counter15 = 0;
+                 if (isObs5Complete && shot15 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs5.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs5[j].transform.localPosition.y <= 0f)
+                         {
+                             counter15++;
+                         }
+                     }
+                        
+                     if (counter15 == ObstacleManager.Instance.lvl2Obs5.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs5Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs6.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs6[i].SetActive(true);
+                         }
+                         isObs6Complete = true;  
+                     }
+                    
+                 }
+                 if(shot15==0 && counter15!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+                
+                 //6th OBS
+                 shot16 = 4;
+                 int counter16 = 0;
+                 if (isObs6Complete && shot16 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs6.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs6[j].transform.localPosition.y <= 0f)
+                         {
+                             counter16++;
+                         }
+                     }
+                        
+                     if (counter16 == ObstacleManager.Instance.lvl2Obs6.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs6Complete = false;
+                         for (int i = 0; i < ObstacleManager.Instance.lvl2Obs7.Count(); i++)
+                         {
+                             ObstacleManager.Instance.lvl2Obs7[i].SetActive(true);
+                         }
+                         isObs7Complete = true;  
+                     }
+                    
+                 }
+                 if(shot16==0 && counter16!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+                 //7th OBS
+                 shot17 = 4;
+                 int counter17 = 0;
+                 if (isObs7Complete && shot17 != 0)
+                 {
+                     for (int j = 0; j < ObstacleManager.Instance.lvl2Obs7.Count; j++)
+                     {
+                         if (ObstacleManager.Instance.lvl2Obs7[j].transform.localPosition.y <= 0f)
+                         {
+                             counter17++;
+                         }
+                     }
+                        
+                     if (counter17 == ObstacleManager.Instance.lvl2Obs7.Count)
+                     {
+                         Debug.Log("All of them has felt at Obs1");
+                         isObs7Complete = false;
+                         Debug.Log("LEVEL 1 HAS ENDED");
+                         GameManager.Instance.level = 2;
+                         PlayerPrefs.SetInt("level", 2);
+                         GameManager.Instance.StopTheGame();
+                     }
+                    
+                 }
+                 if(shot16==0 && counter16!=6)
+                 {
+                     Debug.Log("Not all of them has dropped");
+                     GameManager.Instance.failPanel.SetActive(true);
+                 }
+             }
+            }
+           
         }
 
-        
+        private void MakeBoolsFalse()
+        {
+            isGame0 = true;
+            isObs1Complete = false;
+            isObs2Complete = false;
+            isObs3Complete = false;
+            isObs4Complete = false;
+            isObs5Complete = false;
+            isObs6Complete = false;
+            isObs7Complete = false;
+        }
         private void UpdateLevelUI()
         {
             GameManager gm = GameManager.Instance;
