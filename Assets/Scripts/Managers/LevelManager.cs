@@ -81,7 +81,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs1.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs1[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs1[j].transform.localPosition.y <= -9f)
                             {
                                 counter11++;
                             }
@@ -112,7 +112,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs2.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs2[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs2[j].transform.localPosition.y <= -9f)
                             {
                                 counter12++;
                             }
@@ -144,7 +144,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs3.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs3[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs3[j].transform.localPosition.y <= -9f)
                             {
                                 counter13++;
                             }
@@ -176,7 +176,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs4.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs4[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs4[j].transform.localPosition.y <= -9f)
                             {
                                 counter14++;
                             }
@@ -241,7 +241,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs6.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs6[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs6[j].transform.localPosition.y <= -9f)
                             {
                                 counter16++;
                             }
@@ -272,7 +272,7 @@ namespace Managers
                     {
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs7.Count; j++)
                         {
-                            if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= 0f)
+                            if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= -9f)
                             {
                                 counter17++;
                             }
@@ -327,7 +327,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs1.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs1[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs1[j].transform.localPosition.y <= -9f)
                          {
                              counter11++;
                          }
@@ -358,7 +358,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs2.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs2[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs2[j].transform.localPosition.y <= -9f)
                          {
                              counter12++;
                          }
@@ -390,7 +390,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs3.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs3[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs3[j].transform.localPosition.y <= -9f)
                          {
                              counter13++;
                          }
@@ -422,7 +422,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs4.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs4[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs4[j].transform.localPosition.y <= -9f)
                          {
                              counter14++;
                          }
@@ -455,7 +455,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs5.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs5[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs5[j].transform.localPosition.y <= -9f)
                          {
                              counter15++;
                          }
@@ -487,7 +487,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs6.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs6[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs6[j].transform.localPosition.y <= -9f)
                          {
                              counter16++;
                          }
@@ -518,7 +518,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs7.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl2Obs7[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl2Obs7[j].transform.localPosition.y <= -9f)
                          {
                              counter17++;
                          }
@@ -572,7 +572,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs1.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs1[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs1[j].transform.localPosition.y <= -9f)
                          {
                              counter11++;
                          }
@@ -603,7 +603,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs2.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs2[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs2[j].transform.localPosition.y <= -9f)
                          {
                              counter12++;
                          }
@@ -635,7 +635,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs3.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs3[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs3[j].transform.localPosition.y <= -9f)
                          {
                              counter13++;
                          }
@@ -667,7 +667,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs4.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs4[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs4[j].transform.localPosition.y <= -9f)
                          {
                              counter14++;
                          }
@@ -700,7 +700,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs5.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs5[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs5[j].transform.localPosition.y <= -9f)
                          {
                              counter15++;
                          }
@@ -732,7 +732,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs6.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs6[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs6[j].transform.localPosition.y <= -9f)
                          {
                              counter16++;
                          }
@@ -763,7 +763,7 @@ namespace Managers
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs7.Count; j++)
                      {
-                         if (ObstacleManager.Instance.lvl3Obs7[j].transform.localPosition.y <= 0f)
+                         if (ObstacleManager.Instance.lvl3Obs7[j].transform.localPosition.y <= -9f)
                          {
                              counter17++;
                          }

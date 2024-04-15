@@ -89,7 +89,7 @@ namespace Managers
             isGameStarted = !isGameStarted;
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
-            obsHolder.transform.DOMove(new Vector3(0, -1.7f, 6.2f),0.5F);
+            obsHolder.transform.DOMove(new Vector3(0,-8.53999996f,12.2200003f),0.5F);
         }
 
         public void StopTheGame()
