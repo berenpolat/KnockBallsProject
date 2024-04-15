@@ -2120,12 +2120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvl1Obs1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1246843369}
+  - {fileID: 225372412}
+  - {fileID: 947366632}
+  - {fileID: 1958881550}
+  - {fileID: 582364129}
+  - {fileID: 681812461}
   lvl1Obs2:
   - {fileID: 1189312460}
   - {fileID: 1126837718}
@@ -2181,26 +2181,8 @@ MonoBehaviour:
   - {fileID: 1769908644}
   - {fileID: 746094293}
   - {fileID: 1046143592}
-  lvl2Obs1:
-  - {fileID: 316883838}
-  - {fileID: 1087047693}
-  - {fileID: 1268422000}
-  - {fileID: 638111073}
-  - {fileID: 2004136387}
-  - {fileID: 1235766848}
-  - {fileID: 1277442931}
-  - {fileID: 2132133651}
-  - {fileID: 650318898}
-  - {fileID: 1042769346}
-  - {fileID: 1481472483}
-  - {fileID: 260751537}
-  lvl2Obs2:
-  - {fileID: 1318392611}
-  - {fileID: 1351675915}
-  - {fileID: 1860621233}
-  - {fileID: 1963824410}
-  - {fileID: 1460220488}
-  - {fileID: 2105042432}
+  lvl2Obs1: []
+  lvl2Obs2: []
   lvl2Obs3:
   - {fileID: 1318392611}
   - {fileID: 1351675915}
