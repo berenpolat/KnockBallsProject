@@ -75,6 +75,38 @@ namespace Managers
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
+            if (level == 0)
+            {
+                LevelManager.Instance.isGame0 = true;
+                inGameScore = 1;
+                LevelManager.Instance.isObs1Complete = true;
+                for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
+                }
+            }
+
+            if (level == 2)
+            {
+                LevelManager.Instance.isLevel1Complete = true;
+                LevelManager.Instance.isObs1Complete = true;
+                inGameScore = 0;
+                for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
+                }
+            }
+            if (level == 3)
+            {
+                LevelManager.Instance.isLevel2Complete = true;
+                LevelManager.Instance.isObs1Complete = false;
+                LevelManager.Instance.isGame0 = false;
+                inGameScore = 0;
+                for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count; i++)
+                {
+                    ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
+                }
+            }
         }
 
         // Update is called once per frame
@@ -105,9 +137,9 @@ namespace Managers
 
         private void MoveObsHolderAtTheStart()
         {
-            float speed = 1.0f;
-            float minX = -2.0f;
-            float maxX = 2.0f;
+            float speed = 0.5f;
+            float minX = -1f;
+            float maxX = 1f;
         
             float targetX = _movingRight ? maxX : minX;
             var position = obsHolder.transform.position;

@@ -74,45 +74,6 @@ namespace Managers
             shot17 = 10;
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
-            if (GameManager.Instance.level == 0)
-            {
-                isGame0 = true;
-                GameManager.Instance.inGameScore = 0;
-                isObs1Complete = true;
-                for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
-                {
-                    ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
-                }
-            }
-
-            if (GameManager.Instance.level == 1)
-            {
-                isLevel1Complete = true;
-                isObs1Complete = true;
-                GameManager.Instance.inGameScore = 0;
-                for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
-                {
-                    ObstacleManager.Instance.lvl1Obs1[i].SetActive(false);
-                }
-                for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
-                {
-                    ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
-                }
-            }
-            if (GameManager.Instance.level == 2)
-            {
-                isLevel2Complete = true;
-                isObs1Complete = true;
-                GameManager.Instance.inGameScore = 0;
-                for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
-                {
-                    ObstacleManager.Instance.lvl2Obs1[i].SetActive(false);
-                }
-                for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count; i++)
-                {
-                    ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
-                }
-            }
             
         }
 
@@ -140,8 +101,6 @@ namespace Managers
                             }
                             isObs2Complete = true;
                             GameManager.Instance.levelSliderBlocks[0].color= Color.red;
-                            GameManager.Instance.level = 2;
-                            PlayerPrefs.SetInt("level", 2);
 
                         }
                     
@@ -321,7 +280,7 @@ namespace Managers
             //LVL 2
             
 
-            if (GameManager.Instance.level == 1 && GameManager.Instance.isGameStarted)
+            if (GameManager.Instance.level == 2 && GameManager.Instance.isGameStarted)
             {
                 Debug.Log("Level 2");
              if (isLevel1Complete && GameManager.Instance.isGameStarted)
@@ -517,7 +476,7 @@ namespace Managers
             //LVL 3
             
 
-            if (GameManager.Instance.level ==2 && GameManager.Instance.isGameStarted)
+            if (GameManager.Instance.level ==3 && GameManager.Instance.isGameStarted)
             {
                 Debug.Log("Level 3");
              if (isLevel2Complete && GameManager.Instance.isGameStarted)

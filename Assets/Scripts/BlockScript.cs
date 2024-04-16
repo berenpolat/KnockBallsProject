@@ -9,6 +9,7 @@ public class BlockScript : MonoBehaviour
 {
    private void OnCollisionEnter(Collision other)
    {
+      //Lvl 1
       if (other.gameObject.CompareTag($"BottomCollider") && this.gameObject.CompareTag("11"))
       {
          GameManager.Instance.inGameScore++;
