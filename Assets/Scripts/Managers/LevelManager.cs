@@ -675,7 +675,6 @@ namespace Managers
                      if (counter17 == ObstacleManager.Instance.lvl3Obs7.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
-                         Debug.Log("All of them has felt at Obs1");
                          isObs7Complete = false;
                          Debug.Log("LEVEL 3 HAS ENDED");
                          GameManager.Instance.level = 4;
