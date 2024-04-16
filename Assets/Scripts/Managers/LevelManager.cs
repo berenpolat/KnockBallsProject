@@ -11,7 +11,7 @@ namespace Managers
         [SerializeField] private Button lvl2Button;
         [SerializeField] private Button lvl3Button;
 
-        public bool isGame0,isLevel1Complete, isLevel2Complete, isLevel3Complete;
+        public bool isGame0,isLevel1Complete, isLevel2Complete,isLevel3Complete;
         public int shot11,shot12,shot13,shot14,shot15,shot16,shot17,shot21,shot22,shot23,shot24,shot25,shot26,shot27,shot31,shot32,shot33,shot34,shot35,shot36,shot37;
         public bool isObs1Complete, isObs2Complete, isObs3Complete, isObs4Complete, isObs5Complete, isObs6Complete, isObs7Complete;
         
@@ -25,6 +25,13 @@ namespace Managers
 
         private void Start()
         {
+            shot11 = 4;
+            shot12 = 5;
+            shot13 = 6;
+            shot14 = 7;
+            shot15 = 8;
+            shot16 = 9;
+            shot17 = 10;
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
             if (GameManager.Instance.level == 0)
@@ -69,15 +76,15 @@ namespace Managers
         private void Update()
         {
             UpdateLevelUI();
-            if (GameManager.Instance.level == 0)
+            if (GameManager.Instance.level ==0)
             {
                 if (isGame0 && GameManager.Instance.isGameStarted)
                 {
                     Debug.Log("Level 1");
                 
                     //1ST OBS
-                    shot11 = 4;
                     BallCountText.text = shot11.ToString();
+          
                     int counter11 = 0;
                     if (isObs1Complete && shot11!=0)
                     {
@@ -111,11 +118,11 @@ namespace Managers
                     }
 
                     //2ND OBS
-                    shot12 = 4;
-                    BallCountText.text = shot12.ToString();
+                    
                     int counter12 = 0;
                     if (isObs2Complete && shot12 != 0)
                     {
+                        BallCountText.text = shot12.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs2.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs2[j].transform.localPosition.y <= -9f)
@@ -144,11 +151,12 @@ namespace Managers
                     }
                 
                     //3RD OBS
-                    shot13 = 4;
-                    BallCountText.text = shot13.ToString();
+                    
                     int counter13 = 0;
                     if (isObs3Complete && shot13 != 0)
                     {
+                        
+                        BallCountText.text = shot13.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs3.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs3[j].transform.localPosition.y <= -9f)
@@ -177,11 +185,11 @@ namespace Managers
                     }
                 
                     //4th OBS
-                    shot14 = 4;
-                    BallCountText.text = shot14.ToString();
+                    
                     int counter14 = 0;
                     if (isObs4Complete && shot14 != 0)
                     {
+                        BallCountText.text = shot14.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs4.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs4[j].transform.localPosition.y <= -9f)
@@ -211,11 +219,11 @@ namespace Managers
                
                 
                     //5th OBS
-                    shot15 = 4;
-                    BallCountText.text = shot15.ToString();
+                   
                     int counter15 = 0;
                     if (isObs5Complete && shot15 != 0)
                     {
+                        BallCountText.text = shot15.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs5.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs5[j].transform.localPosition.y <= 0f)
@@ -244,11 +252,11 @@ namespace Managers
                     }
                 
                     //6th OBS
-                    shot16 = 4;
-                    BallCountText.text = shot16.ToString();
+                    
                     int counter16 = 0;
                     if (isObs6Complete && shot16 != 0)
                     {
+                        BallCountText.text = shot16.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs6.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs6[j].transform.localPosition.y <= -9f)
@@ -276,11 +284,11 @@ namespace Managers
                         GameManager.Instance.failPanel.SetActive(true);
                     }
                     //7th OBS
-                    shot17 = 4;
-                    BallCountText.text = shot17.ToString();
+                   
                     int counter17 = 0;
                     if (isObs7Complete && shot17 != 0)
                     {
+                        BallCountText.text = shot17.ToString();
                         for (int j = 0; j < ObstacleManager.Instance.lvl1Obs7.Count; j++)
                         {
                             if (ObstacleManager.Instance.lvl1Obs7[j].transform.localPosition.y <= -9f)
@@ -295,8 +303,8 @@ namespace Managers
                             Debug.Log("All of them has felt at Obs1");
                             isObs7Complete = false;
                             Debug.Log("LEVEL 1 HAS ENDED");
-                            GameManager.Instance.level = 1;
-                            PlayerPrefs.SetInt("level", 1);
+                            GameManager.Instance.level = 2;
+                            PlayerPrefs.SetInt("level", 2);
                             GameManager.Instance.StopTheGame();
                             GameManager.Instance.isGameStarted = false;
                             isGame0 = false;
@@ -332,7 +340,6 @@ namespace Managers
              {
                 
                  //1ST OBS
-                 shot21 = 4;
                  BallCountText.text = shot21.ToString();
                  int counter11 = 0;
                  if (isObs1Complete && shot21!=0)
@@ -364,11 +371,11 @@ namespace Managers
                  }
 
                  //2ND OBS
-                 shot22 = 4;
-                 BallCountText.text = shot22.ToString();
+                
                  int counter12 = 0;
                  if (isObs2Complete && shot22 != 0)
                  {
+                     BallCountText.text = shot22.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs2.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs2[j].transform.localPosition.y <= -9f)
@@ -397,11 +404,11 @@ namespace Managers
                  }
                 
                  //3RD OBS
-                 shot23 = 4;
-                 BallCountText.text = shot23.ToString();
+                 
                  int counter13 = 0;
                  if (isObs3Complete && shot23 != 0)
                  {
+                     BallCountText.text = shot23.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs3.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs3[j].transform.localPosition.y <= -9f)
@@ -430,11 +437,11 @@ namespace Managers
                  }
                 
                  //4th OBS
-                 shot24 = 4;
-                 BallCountText.text = shot24.ToString();
+                
                  int counter14 = 0;
                  if (isObs4Complete && shot24 != 0)
                  {
+                     BallCountText.text = shot24.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs4.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs4[j].transform.localPosition.y <= -9f)
@@ -464,11 +471,11 @@ namespace Managers
                
                 
                  //5th OBS
-                 shot25 = 4;
-                 BallCountText.text = shot25.ToString();
+                 
                  int counter15 = 0;
                  if (isObs5Complete && shot25 != 0)
                  {
+                     BallCountText.text = shot25.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs5.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs5[j].transform.localPosition.y <= -9f)
@@ -497,11 +504,11 @@ namespace Managers
                  }
                 
                  //6th OBS
-                 shot26 = 4;
-                 BallCountText.text = shot26.ToString();
+                
                  int counter16 = 0;
                  if (isObs6Complete && shot26 != 0)
                  {
+                     BallCountText.text = shot26.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs6.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs6[j].transform.localPosition.y <= -9f)
@@ -529,11 +536,11 @@ namespace Managers
                      GameManager.Instance.failPanel.SetActive(true);
                  }
                  //7th OBS
-                 shot27 = 4;
-                 BallCountText.text = shot27.ToString();
+                
                  int counter17 = 0;
                  if (isObs7Complete && shot27 != 0)
                  {
+                     BallCountText.text = shot27.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl2Obs7.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl2Obs7[j].transform.localPosition.y <= -9f)
@@ -547,8 +554,8 @@ namespace Managers
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                          isObs7Complete = false;
                          Debug.Log("LEVEL 2 HAS ENDED");
-                         GameManager.Instance.level = 2;
-                         PlayerPrefs.SetInt("level", 2);
+                         GameManager.Instance.level = 3;
+                         PlayerPrefs.SetInt("level", 3);
                          GameManager.Instance.StopTheGame();
                          isLevel2Complete = true;
                          isLevel1Complete = false;
@@ -576,16 +583,16 @@ namespace Managers
             //LVL 3
             
 
-            if (GameManager.Instance.level == 2 && GameManager.Instance.isGameStarted)
+            if (GameManager.Instance.level ==2 && GameManager.Instance.isGameStarted)
             {
                 Debug.Log("Level 3");
              if (isLevel2Complete && GameManager.Instance.isGameStarted)
              {
                 
                  //1ST OBS
-                 shot11 = 4;
+                 BallCountText.text = shot31.ToString();
                  int counter11 = 0;
-                 if (isObs1Complete && shot11!=0)
+                 if (isObs1Complete && shot31!=0)
                  {
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs1.Count; j++)
                      {
@@ -607,17 +614,18 @@ namespace Managers
                      }
                     
                  }
-                 if(shot11==0 && counter11!=6)
+                 if(shot31==0 && counter11!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
                  }
 
                  //2ND OBS
-                 shot12 = 4;
+                 
                  int counter12 = 0;
-                 if (isObs2Complete && shot12 != 0)
+                 if (isObs2Complete && shot32 != 0)
                  {
+                     BallCountText.text = shot32.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs2.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs2[j].transform.localPosition.y <= -9f)
@@ -639,17 +647,18 @@ namespace Managers
                      }
                     
                  }
-                 if(shot12==0 && counter12!=6)
+                 if(shot32==0 && counter12!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //3RD OBS
-                 shot13 = 4;
+                 
                  int counter13 = 0;
-                 if (isObs3Complete && shot13 != 0)
+                 if (isObs3Complete && shot33 != 0)
                  {
+                     BallCountText.text = shot33.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs3.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs3[j].transform.localPosition.y <= -9f)
@@ -671,17 +680,17 @@ namespace Managers
                      }
                     
                  }
-                 if(shot13==0 && counter13!=6)
+                 if(shot33==0 && counter13!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //4th OBS
-                 shot14 = 4;
                  int counter14 = 0;
-                 if (isObs4Complete && shot14 != 0)
+                 if (isObs4Complete && shot34 != 0)
                  {
+                     BallCountText.text = shot34.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs4.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs4[j].transform.localPosition.y <= -9f)
@@ -703,7 +712,7 @@ namespace Managers
                      }
                     
                  }
-                 if(shot14==0 && counter14!=6)
+                 if(shot34==0 && counter14!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -711,10 +720,10 @@ namespace Managers
                
                 
                  //5th OBS
-                 shot15 = 4;
                  int counter15 = 0;
-                 if (isObs5Complete && shot15 != 0)
+                 if (isObs5Complete && shot35 != 0)
                  {
+                     BallCountText.text = shot35.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs5.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs5[j].transform.localPosition.y <= -9f)
@@ -736,17 +745,17 @@ namespace Managers
                      }
                     
                  }
-                 if(shot15==0 && counter15!=6)
+                 if(shot35==0 && counter15!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //6th OBS
-                 shot16 = 4;
                  int counter16 = 0;
-                 if (isObs6Complete && shot16 != 0)
+                 if (isObs6Complete && shot36 != 0)
                  {
+                     BallCountText.text = shot36.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs6.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs6[j].transform.localPosition.y <= -9f)
@@ -768,16 +777,16 @@ namespace Managers
                      }
                     
                  }
-                 if(shot16==0 && counter16!=6)
+                 if(shot36==0 && counter16!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
                  }
                  //7th OBS
-                 shot17 = 4;
                  int counter17 = 0;
-                 if (isObs7Complete && shot17 != 0)
+                 if (isObs7Complete && shot37 != 0)
                  {
+                     BallCountText.text = shot37.ToString();
                      for (int j = 0; j < ObstacleManager.Instance.lvl3Obs7.Count; j++)
                      {
                          if (ObstacleManager.Instance.lvl3Obs7[j].transform.localPosition.y <= -9f)
@@ -792,8 +801,8 @@ namespace Managers
                          Debug.Log("All of them has felt at Obs1");
                          isObs7Complete = false;
                          Debug.Log("LEVEL 3 HAS ENDED");
-                         GameManager.Instance.level = 3;
-                         PlayerPrefs.SetInt("level", 3);
+                         GameManager.Instance.level = 4;
+                         PlayerPrefs.SetInt("level", 4);
                          GameManager.Instance.StopTheGame();
                          isLevel3Complete = true;
                          isLevel2Complete = false;
@@ -809,7 +818,7 @@ namespace Managers
                      }
                     
                  }
-                 if(shot16==0 && counter16!=6)
+                 if(shot37==0 && counter17!=6)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
