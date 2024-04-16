@@ -13,7 +13,7 @@ namespace Managers
     {
         #region General Variables
 
-        public int level=0;
+        public int level =0;
         public int bestScore;
         public int coin;
         public bool isGameStarted;
@@ -90,7 +90,6 @@ namespace Managers
             startPanel.SetActive(false);
             ınGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0,-8.53999996f,12.2200003f),0.5F);
-            failPanel.SetActive(false);
         }
 
         public void StopTheGame()
@@ -102,8 +101,8 @@ namespace Managers
         private void MoveObsHolderAtTheStart()
         {
             float speed = 1.0f;
-            float minX = -2.0f;
-            float maxX = 2.0f;
+            float minX = -3.0f;
+            float maxX = 3.0f;
         
             float targetX = _movingRight ? maxX : minX;
             var position = obsHolder.transform.position;
