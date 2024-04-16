@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 38982683}
   - component: {fileID: 38982682}
   - component: {fileID: 38982681}
+  - component: {fileID: 38982685}
   m_Layer: 5
   m_Name: 'Canvas '
   m_TagString: Untagged
@@ -335,6 +336,7 @@ RectTransform:
   - {fileID: 1947388616}
   - {fileID: 63507361}
   - {fileID: 2117983147}
+  - {fileID: 1671659299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -342,6 +344,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &38982685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38982680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f45661a6e1150f4e929b20af36b2a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 1671659297}
 --- !u!1 &63507360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,11 +5632,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   bestScore: 0
+  inGameScore: 0
   coin: 0
   isGameStarted: 0
   obsHolder: {fileID: 1212689067}
   startPanel: {fileID: 358004066}
-  "\u0131nGamePanel": {fileID: 1194063766}
+  inGamePanel: {fileID: 0}
   backToMenuPanel: {fileID: 1947388613}
   levelTreePanel: {fileID: 63507360}
   failPanel: {fileID: 2117983146}
@@ -5635,6 +5651,7 @@ MonoBehaviour:
   - {fileID: 64214662}
   lvlText: {fileID: 1692581241}
   bestScoreText: {fileID: 1887720805}
+  inGameScoreText: {fileID: 0}
 --- !u!4 &799271661
 Transform:
   m_ObjectHideFlags: 0
@@ -11050,6 +11067,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671435187}
   m_CullTransparentMesh: 1
+--- !u!1 &1671659296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671659299}
+  - component: {fileID: 1671659298}
+  - component: {fileID: 1671659297}
+  m_Layer: 5
+  m_Name: blackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1671659297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671659296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 1dccea703ee6c09419a21311a7ac0de9, type: 2}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1671659298
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671659296}
+  m_CullTransparentMesh: 1
+--- !u!224 &1671659299
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671659296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 38982684}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1684908949
 GameObject:
   m_ObjectHideFlags: 0
@@ -12710,6 +12802,20 @@ MonoBehaviour:
   shot15: 0
   shot16: 0
   shot17: 0
+  shot21: 0
+  shot22: 0
+  shot23: 0
+  shot24: 0
+  shot25: 0
+  shot26: 0
+  shot27: 0
+  shot31: 0
+  shot32: 0
+  shot33: 0
+  shot34: 0
+  shot35: 0
+  shot36: 0
+  shot37: 0
   isObs1Complete: 0
   isObs2Complete: 0
   isObs3Complete: 0
@@ -12717,8 +12823,30 @@ MonoBehaviour:
   isObs5Complete: 0
   isObs6Complete: 0
   isObs7Complete: 0
+  counter11: 0
+  counter12: 0
+  counter13: 0
+  counter14: 0
+  counter15: 0
+  counter16: 0
+  counter17: 0
+  counter21: 0
+  counter22: 0
+  counter23: 0
+  counter24: 0
+  counter25: 0
+  counter26: 0
+  counter27: 0
+  counter31: 0
+  counter32: 0
+  counter33: 0
+  counter34: 0
+  counter35: 0
+  counter36: 0
+  counter37: 0
   inGameLvlText: {fileID: 365849381}
   inGameNextLvlText: {fileID: 621427163}
+  BallCountText: {fileID: 0}
 --- !u!1 &1926176392
 GameObject:
   m_ObjectHideFlags: 0
