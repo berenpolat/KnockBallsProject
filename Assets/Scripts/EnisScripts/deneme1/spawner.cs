@@ -1,26 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class spawner : MonoBehaviour
+namespace EnisScripts.deneme1
 {
-   private objectPooler _objectPooler;
+   public class Spawner : MonoBehaviour
+   {
+      private ObjectPooler _objectPooler;
   
-   private void Start()
-   {
-      _objectPooler = objectPooler.Instance;
-      
-   }
-
-   private void Update()
-   {
-      if (Input.GetMouseButtonDown(0))
+      private void Start()
       {
-         Vector3 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-         mousePosition.z = 0f;
+         _objectPooler = ObjectPooler.Instance;
+      
+      }
 
-         _objectPooler.spawnFromPool("cube", mousePosition, Quaternion.identity);
+      private void Update()
+      {
+         if (Input.GetMouseButtonDown(0))
+         {
+            Vector3 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            mousePosition.z = 0f;
+
+            _objectPooler.spawnFromPool("cube", mousePosition, Quaternion.identity);
+         }
       }
    }
 }

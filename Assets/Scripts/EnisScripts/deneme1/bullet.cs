@@ -1,15 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public  class bullet : MonoBehaviour, Ibullets
+namespace EnisScripts.deneme1
 {
+    public  class Bullet : MonoBehaviour, Ibullets
+    {
    
 
-    public void OnObjectSpawn()
-   {
-     Debug.Log("yöntem1");
-   }
+        public void OnObjectSpawn()
+        {
+            Debug.Log("yöntem1");
+        }
+    }
 }

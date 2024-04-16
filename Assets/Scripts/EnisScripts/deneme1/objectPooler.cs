@@ -1,66 +1,67 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objectPooler : MonoBehaviour
+namespace EnisScripts.deneme1
 {
-    [System.Serializable]
-    public class Pool
+    public class ObjectPooler : MonoBehaviour
     {
-        public string tag;
-        public GameObject prefab;
-        public int size;
-    }
-    
-    #region singletion
-    
-    public static objectPooler Instance;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
-    #endregion
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-    void Start()
-    {
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
-
-        foreach (Pool pool in pools)
+        [System.Serializable]
+        public class Pool
         {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
-            for (int i = 0; i <pool.size; i++)
+            public string tag;
+            public GameObject prefab;
+            public int size;
+        }
+    
+        #region singletion
+    
+        public static ObjectPooler Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
+        #endregion
+        public List<Pool> pools;
+        public Dictionary<string, Queue<GameObject>> poolDictionary;
+        void Start()
+        {
+            poolDictionary = new Dictionary<string, Queue<GameObject>>();
+
+            foreach (Pool pool in pools)
             {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
+                Queue<GameObject> objectPool = new Queue<GameObject>();
+                for (int i = 0; i <pool.size; i++)
+                {
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    objectPool.Enqueue(obj);
+                }
+                poolDictionary.Add(pool.tag, objectPool);
             }
-            poolDictionary.Add(pool.tag, objectPool);
         }
-    }
 
-    public GameObject spawnFromPool(string tag, Vector3 position, Quaternion rotation)
-    {
-        if (!poolDictionary.ContainsKey(tag))
+        public GameObject spawnFromPool(string tag, Vector3 position, Quaternion rotation)
         {
-            Debug.LogWarning("Pool with tag " + tag + " doesnt excist");
-            return null;
-        }
-        GameObject objectToSpawn =   poolDictionary[tag].Dequeue();
+            if (!poolDictionary.ContainsKey(tag))
+            {
+                Debug.LogWarning("Pool with tag " + tag + " doesnt excist");
+                return null;
+            }
+            GameObject objectToSpawn =   poolDictionary[tag].Dequeue();
         
-        objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
-        objectToSpawn.transform.rotation = rotation;
+            objectToSpawn.SetActive(true);
+            objectToSpawn.transform.position = position;
+            objectToSpawn.transform.rotation = rotation;
 
-        Ibullets pooledObj = objectToSpawn.GetComponent<Ibullets>();
-        if (pooledObj != null)
-        {
-            pooledObj.OnObjectSpawn();
+            Ibullets pooledObj = objectToSpawn.GetComponent<Ibullets>();
+            if (pooledObj != null)
+            {
+                pooledObj.OnObjectSpawn();
+            }
+            poolDictionary[tag].Enqueue(objectToSpawn);
+            return objectToSpawn;
         }
-        poolDictionary[tag].Enqueue(objectToSpawn);
-        return objectToSpawn;
     }
 }

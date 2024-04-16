@@ -105,6 +105,9 @@ namespace Managers
                             }
                             isObs2Complete = true;
                             GameManager.Instance.levelSliderBlocks[0].color= Color.red;
+                            GameManager.Instance.level = 2;
+                            PlayerPrefs.SetInt("level", 2);
+
                         }
                     
                     }
@@ -549,7 +552,6 @@ namespace Managers
                      if (counter17 == ObstacleManager.Instance.lvl2Obs7.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
-                         Debug.Log("All of them has felt at Obs1");
                          isObs7Complete = false;
                          Debug.Log("LEVEL 2 HAS ENDED");
                          GameManager.Instance.level = 3;
