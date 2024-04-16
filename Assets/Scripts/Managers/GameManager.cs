@@ -15,6 +15,7 @@ namespace Managers
 
         public int level=0;
         public int bestScore;
+        public int inGameScore;
         public int coin;
         public bool isGameStarted;
         [SerializeField] private GameObject obsHolder;
@@ -26,7 +27,7 @@ namespace Managers
         
         #region Panels
         [SerializeField] private GameObject startPanel;
-        [SerializeField] private GameObject ınGamePanel;
+        [SerializeField] private GameObject inGamePanel;
         [SerializeField] private GameObject backToMenuPanel;
         [SerializeField] private GameObject levelTreePanel;
         public GameObject failPanel;
@@ -44,6 +45,7 @@ namespace Managers
 
         [SerializeField] private Text lvlText;
         [SerializeField] private Text bestScoreText;
+        [SerializeField] private Text inGameScoreText;
 
         #endregion
         #region Singleton
@@ -78,6 +80,8 @@ namespace Managers
         // Update is called once per frame
         void Update()
         {
+            inGameScoreText.text = inGameScore.ToString();
+            
             if(!isGameStarted) MoveObsHolderAtTheStart();
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
@@ -88,7 +92,7 @@ namespace Managers
         {
             isGameStarted = !isGameStarted;
             startPanel.SetActive(false);
-            ınGamePanel.SetActive(true);
+            inGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0,-8.53999996f,12.2200003f),0.5F);
             failPanel.SetActive(false);
         }
@@ -96,7 +100,7 @@ namespace Managers
         public void StopTheGame()
         {
             startPanel.SetActive(true);
-            ınGamePanel.SetActive(false);
+            inGamePanel.SetActive(false);
         }
 
         private void MoveObsHolderAtTheStart()
