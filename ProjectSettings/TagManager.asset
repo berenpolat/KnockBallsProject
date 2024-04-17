@@ -27,6 +27,8 @@ TagManager:
   - 35
   - 36
   - 37
+  - bullet
+  - breakble
   layers:
   - Default
   - TransparentFX

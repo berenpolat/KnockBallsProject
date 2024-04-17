@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1703738038380636398}
   - component: {fileID: -2702148246255356018}
   - component: {fileID: 4531646327072026355}
+  - component: {fileID: 6851035955844339402}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -2702148246255356018}
+--- !u!114 &6851035955844339402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657984582255354875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57f1b0c75d11a6498720347b8be05c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 0}
