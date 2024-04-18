@@ -10,11 +10,11 @@ namespace Managers
         [SerializeField] private Button lvl1Button;
         [SerializeField] private Button lvl2Button;
         [SerializeField] private Button lvl3Button;
-
+       
         public bool isGame0,isLevel1Complete, isLevel2Complete,isLevel3Complete;
         public int shot11,shot12,shot13,shot14,shot15,shot16,shot17,shot21,shot22,shot23,shot24,shot25,shot26,shot27,shot31,shot32,shot33,shot34,shot35,shot36,shot37;
         public bool isObs1Complete, isObs2Complete, isObs3Complete, isObs4Complete, isObs5Complete, isObs6Complete, isObs7Complete;
-
+        
         public int counter11,
             counter12,
             counter13,
@@ -43,6 +43,9 @@ namespace Managers
         
         
         private ColorBlock cb;
+
+
+       
         
         #region Singleton
         public static LevelManager Instance { get; set; }
@@ -65,6 +68,7 @@ namespace Managers
 
         private void Start()
         {
+            Canon.ammo = 30;
             shot11 = 4;
             shot12 = 5;
             shot13 = 6;
@@ -75,6 +79,7 @@ namespace Managers
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
             
+
         }
 
         private void Update()
@@ -86,6 +91,7 @@ namespace Managers
                 {
                     Debug.Log("Level 1");
                     //1ST OBS
+                    
                     BallCountText.text = shot11.ToString();
                     
                     if (isObs1Complete && shot11!=0)
