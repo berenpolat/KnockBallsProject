@@ -40,11 +40,15 @@ public class bulletBreak : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("wall"))
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("BottomCollider"))
         {
             for (int i = 0; i < CurrentAmmo; i++)
             {
-              this.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
             }
         }
     }
