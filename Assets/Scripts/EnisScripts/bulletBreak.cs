@@ -6,6 +6,13 @@ using UnityEngine;
 public class bulletBreak : MonoBehaviour
 {
     [SerializeField] private float forceMultiplier; // Kuvvet çarpanı
+    private int CurrentAmmo;
+
+    private void Update()
+    {
+        CurrentAmmo = Canon.ammo;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("breakble"))
@@ -30,6 +37,14 @@ public class bulletBreak : MonoBehaviour
                     // Kuvveti uygulayın
                     childRigidbody.AddForce(forceDirection.normalized * forceMultiplier, ForceMode.Impulse);
                 }
+            }
+        }
+
+        if (other.gameObject.CompareTag("wall"))
+        {
+            for (int i = 0; i < CurrentAmmo; i++)
+            {
+              this.gameObject.SetActive(false);
             }
         }
     }

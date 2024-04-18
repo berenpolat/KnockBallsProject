@@ -4,6 +4,7 @@ using Base.State;
 using DG.Tweening;
 using State;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ namespace Managers
         [SerializeField] private GameObject obsHolder;
         private bool _movingRight = true;
         #endregion
+        
         private CancellationTokenSource StateCancellationTokenSource { get; set; } = null!;
         public static CancellationTokenSource GeneralCancellationTokenSource { get; } = new CancellationTokenSource();
         private IContext _finalContext = null!;
@@ -72,6 +74,7 @@ namespace Managers
         // Start is called before the first frame update
         void Start()
         {
+            
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
@@ -175,7 +178,6 @@ namespace Managers
             levelTreePanel.SetActive(false);
         }
         #endregion
-        
         
     }
 }

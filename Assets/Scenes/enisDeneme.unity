@@ -1566,7 +1566,7 @@ PrefabInstance:
     - target: {fileID: 3293157325660394706, guid: f5f5ca4ca712987429b7c9b40b52d2ce,
         type: 3}
       propertyPath: m_Mass
-      value: 0.0000001
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2165,6 +2165,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletPosition: {fileID: 6228769360095208733}
   bulletSpeed: 30
+  ammo: 0
 --- !u!1 &2018391864
 GameObject:
   m_ObjectHideFlags: 0
