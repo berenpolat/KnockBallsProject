@@ -83,6 +83,7 @@ namespace Managers
                 LevelManager.Instance.isGame0 = true;
                 inGameScore = 1;
                 LevelManager.Instance.isObs1Complete = true;
+                failPanel.SetActive(false);
                 for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
@@ -94,6 +95,7 @@ namespace Managers
                 LevelManager.Instance.isLevel1Complete = true;
                 LevelManager.Instance.isObs1Complete = true;
                 inGameScore = 0;
+                failPanel.SetActive(false);
                 for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
@@ -105,6 +107,7 @@ namespace Managers
                 LevelManager.Instance.isObs1Complete = false;
                 LevelManager.Instance.isGame0 = false;
                 inGameScore = 0;
+                failPanel.SetActive(false);
                 for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
@@ -128,7 +131,7 @@ namespace Managers
             isGameStarted = !isGameStarted;
             startPanel.SetActive(false);
             inGamePanel.SetActive(true);
-            obsHolder.transform.DOMove(new Vector3(0,-8.53999996f,12.2200003f),0.5F);
+            obsHolder.transform.DOMove(new Vector3(0,-8.5f,13.6999998f),0.5F);
             failPanel.SetActive(false);
         }
 

@@ -76,6 +76,11 @@ namespace Managers
             shot15 = 8;
             shot16 = 9;
             shot17 = 10;
+            shot21 = 10;
+            shot22 = 4;
+            shot23 = 5;
+            shot24 = 6;
+            shot25 = 8;
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
             
@@ -274,7 +279,7 @@ namespace Managers
                         }
                     
                     }
-                    if(shot16==0 && counter16!=ObstacleManager.Instance.lvl1Obs7.Count)
+                    if(shot17==0 && counter17!=ObstacleManager.Instance.lvl1Obs7.Count)
                     {
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
@@ -291,12 +296,11 @@ namespace Managers
                 Debug.Log("Level 2");
              if (isLevel1Complete && GameManager.Instance.isGameStarted)
              {
-                
                  //1ST OBS
                  BallCountText.text = shot21.ToString();
                  if (isObs1Complete && shot21!=0)
                  {
-                     if (counter11 == ObstacleManager.Instance.lvl2Obs1.Count)
+                     if (counter21 == ObstacleManager.Instance.lvl2Obs1.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -309,7 +313,7 @@ namespace Managers
                      }
                     
                  }
-                 if(shot21==0 && counter11!=ObstacleManager.Instance.lvl2Obs1.Count)
+                 if(shot21==0 && counter21!=ObstacleManager.Instance.lvl2Obs1.Count)
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -322,7 +326,7 @@ namespace Managers
                  {
                      BallCountText.text = shot22.ToString();
                         
-                     if (counter12 == ObstacleManager.Instance.lvl2Obs2.Count)
+                     if (counter22 == ObstacleManager.Instance.lvl2Obs2.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -347,7 +351,7 @@ namespace Managers
                  {
                      BallCountText.text = shot23.ToString();
                      
-                     if (counter13 == ObstacleManager.Instance.lvl2Obs3.Count)
+                     if (counter23 == ObstacleManager.Instance.lvl2Obs3.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -373,7 +377,7 @@ namespace Managers
                      BallCountText.text = shot24.ToString();
                     
                         
-                     if (counter14 == ObstacleManager.Instance.lvl2Obs4.Count)
+                     if (counter24 == ObstacleManager.Instance.lvl2Obs4.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -399,7 +403,7 @@ namespace Managers
                  {
                      BallCountText.text = shot25.ToString();
                         
-                     if (counter15 == ObstacleManager.Instance.lvl2Obs5.Count)
+                     if (counter25 == ObstacleManager.Instance.lvl2Obs5.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -424,7 +428,7 @@ namespace Managers
                  {
                      BallCountText.text = shot26.ToString();
                         
-                     if (counter16 == ObstacleManager.Instance.lvl2Obs6.Count)
+                     if (counter26 == ObstacleManager.Instance.lvl2Obs6.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -448,7 +452,7 @@ namespace Managers
                  {
                      BallCountText.text = shot27.ToString();
                         
-                     if (counter17 == ObstacleManager.Instance.lvl2Obs7.Count)
+                     if (counter27 == ObstacleManager.Instance.lvl2Obs7.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                          isObs7Complete = false;
@@ -493,7 +497,7 @@ namespace Managers
                  if (isObs1Complete && shot31!=0)
                  {
                      BallCountText.text = shot31.ToString();
-                     if (counter11 == ObstacleManager.Instance.lvl3Obs1.Count)
+                     if (counter31 == ObstacleManager.Instance.lvl3Obs1.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -517,7 +521,7 @@ namespace Managers
                  if (isObs2Complete && shot32 != 0)
                  {
                      BallCountText.text = shot32.ToString();
-                     if (counter12 == ObstacleManager.Instance.lvl3Obs2.Count)
+                     if (counter32 == ObstacleManager.Instance.lvl3Obs2.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -542,7 +546,7 @@ namespace Managers
                  {
                      BallCountText.text = shot33.ToString();
                         
-                     if (counter13 == ObstacleManager.Instance.lvl3Obs3.Count)
+                     if (counter33 == ObstacleManager.Instance.lvl3Obs3.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -565,7 +569,7 @@ namespace Managers
                  if (isObs4Complete && shot34 != 0)
                  {
                      BallCountText.text = shot34.ToString();
-                     if (counter14 == ObstacleManager.Instance.lvl3Obs4.Count)
+                     if (counter34 == ObstacleManager.Instance.lvl3Obs4.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -590,7 +594,7 @@ namespace Managers
                  {
                      BallCountText.text = shot35.ToString();
                         
-                     if (counter15 == ObstacleManager.Instance.lvl3Obs5.Count)
+                     if (counter35 == ObstacleManager.Instance.lvl3Obs5.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -614,7 +618,7 @@ namespace Managers
                  {
                      BallCountText.text = shot36.ToString();
                     
-                     if (counter16 == ObstacleManager.Instance.lvl3Obs6.Count)
+                     if (counter36 == ObstacleManager.Instance.lvl3Obs6.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
@@ -637,7 +641,7 @@ namespace Managers
                  {
                      BallCountText.text = shot37.ToString();
                         
-                     if (counter17 == ObstacleManager.Instance.lvl3Obs7.Count)
+                     if (counter37 == ObstacleManager.Instance.lvl3Obs7.Count)
                      {
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                          isObs7Complete = false;
