@@ -68,7 +68,7 @@ namespace Managers
 
         private void Start()
         {
-            Canon.ammo = 30;
+            
             shot11 = 4;
             shot12 = 5;
             shot13 = 6;
@@ -83,7 +83,7 @@ namespace Managers
             shot25 = 8;
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
-            
+            Canon.ammo = shot11;
 
         }
 
@@ -98,12 +98,13 @@ namespace Managers
                     //1ST OBS
                     
                     BallCountText.text = shot11.ToString();
-                    
+                   
                     if (isObs1Complete && shot11!=0)
                     {
                         
                         if (counter11 == ObstacleManager.Instance.lvl1Obs1.Count)
                         {
+                            Canon.ammo = shot12;
                             Debug.Log("All of them has felt at Obs1");
                             isObs1Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs2.Count(); i++)
@@ -128,6 +129,7 @@ namespace Managers
                         BallCountText.text = shot12.ToString();
                         if (counter12 == ObstacleManager.Instance.lvl1Obs2.Count)
                         {
+                            Canon.ammo = shot13;
                             Debug.Log("All of them has felt at Obs1");
                             isObs2Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs3.Count; i++)
@@ -155,6 +157,7 @@ namespace Managers
                         
                         if (counter13 == ObstacleManager.Instance.lvl1Obs3.Count)
                         {
+                            Canon.ammo = shot14;
                             Debug.Log("All of them has felt at Obs1");
                             isObs3Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs4.Count(); i++)
@@ -179,6 +182,7 @@ namespace Managers
                         BallCountText.text = shot14.ToString();
                         if (counter14 == ObstacleManager.Instance.lvl1Obs4.Count)
                         {
+                            Canon.ammo = shot15;
                             Debug.Log("All of them has felt at Obs1");
                             isObs4Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs5.Count(); i++)
@@ -206,6 +210,7 @@ namespace Managers
                         
                         if (counter15 == ObstacleManager.Instance.lvl1Obs5.Count)
                         {
+                            Canon.ammo = shot16;
                             Debug.Log("All of them has felt at Obs1");
                             isObs5Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs6.Count(); i++)
@@ -232,6 +237,7 @@ namespace Managers
                         
                         if (counter16 == ObstacleManager.Instance.lvl1Obs6.Count)
                         {
+                            Canon.ammo = shot17;
                             Debug.Log("All of them has felt at Obs1");
                             isObs6Complete = false;
                             for (int i = 0; i < ObstacleManager.Instance.lvl1Obs7.Count(); i++)
@@ -293,6 +299,7 @@ namespace Managers
 
             if (GameManager.Instance.level == 2 && GameManager.Instance.isGameStarted)
             {
+                Canon.ammo = shot21;
                 Debug.Log("Level 2");
              if (isLevel1Complete && GameManager.Instance.isGameStarted)
              {

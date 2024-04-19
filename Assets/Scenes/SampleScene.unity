@@ -21925,7 +21925,7 @@ MonoBehaviour:
   bestScore: 0
   inGameScore: 0
   coin: 0
-  isGameStarted: 0
+  isGameStarted: 1
   obsHolder: {fileID: 13507775}
   startPanel: {fileID: 358004066}
   inGamePanel: {fileID: 1077482688}
