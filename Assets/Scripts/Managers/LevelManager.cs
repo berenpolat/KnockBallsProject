@@ -90,7 +90,7 @@ namespace Managers
         private void Update()
         {
             UpdateLevelUI();
-            if (GameManager.Instance.level ==0)
+            if (GameManager.Instance.level ==0 && GameManager.Instance.isGameStarted)
             {
                 if (isGame0 && GameManager.Instance.isGameStarted)
                 {
@@ -121,6 +121,7 @@ namespace Managers
                     {
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
+                        GameManager.Instance.isGameStarted = false;
                     }
 
                     //2ND OBS
@@ -144,6 +145,7 @@ namespace Managers
                     if(shot12==0 && counter12!=ObstacleManager.Instance.lvl1Obs2.Count)
                     {
                         Debug.Log("Not all of them has dropped");
+                        GameManager.Instance.isGameStarted = false;
                         GameManager.Instance.failPanel.SetActive(true);
                     }
                 
@@ -173,6 +175,7 @@ namespace Managers
                     {
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
+                        GameManager.Instance.isGameStarted = false;
                     }
                 
                     //4th OBS
@@ -198,6 +201,7 @@ namespace Managers
                     {
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
+                        GameManager.Instance.isGameStarted = false;
                     }
                
                 
@@ -224,6 +228,7 @@ namespace Managers
                     }
                     if(shot15==0 && counter15!=ObstacleManager.Instance.lvl1Obs5.Count)
                     {
+                        GameManager.Instance.isGameStarted = false;
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
                     }
@@ -251,6 +256,7 @@ namespace Managers
                     }
                     if(shot16==0 && counter16!=ObstacleManager.Instance.lvl1Obs6.Count)
                     {
+                        GameManager.Instance.isGameStarted = false;
                         Debug.Log("Not all of them has dropped");
                         GameManager.Instance.failPanel.SetActive(true);
                     }
@@ -324,6 +330,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
 
                  //2ND OBS
@@ -350,6 +357,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //3RD OBS
@@ -375,6 +383,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //4th OBS
@@ -401,6 +410,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                
                 
@@ -427,6 +437,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //6th OBS
@@ -452,6 +463,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                  //7th OBS
                  
@@ -485,6 +497,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
              }
             }
@@ -521,6 +534,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
 
                  //2ND OBS
@@ -545,6 +559,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //3RD OBS
@@ -570,6 +585,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //4th OBS
@@ -593,6 +609,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                
                 
@@ -618,6 +635,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                 
                  //6th OBS
@@ -642,6 +660,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
                  //7th OBS
                  if (isObs7Complete && shot37 != 0)
@@ -674,6 +693,7 @@ namespace Managers
                  {
                      Debug.Log("Not all of them has dropped");
                      GameManager.Instance.failPanel.SetActive(true);
+                     GameManager.Instance.isGameStarted = false;
                  }
              }
             }
