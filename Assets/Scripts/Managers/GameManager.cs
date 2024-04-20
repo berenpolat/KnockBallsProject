@@ -55,6 +55,7 @@ namespace Managers
     
         private void Awake()
         {
+            isGameStarted = false;
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -123,8 +124,10 @@ namespace Managers
         void Update()
         {
             inGameScoreText.text = inGameScore.ToString();
-            
-            if(!isGameStarted) MoveObsHolderAtTheStart();
+            if (isGameStarted == false)
+            {
+                MoveObsHolderAtTheStart();
+            }
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
         }
@@ -136,7 +139,7 @@ namespace Managers
             startPanel.SetActive(false);
             inGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0,-8.5f,13.6999998f),0.5F);
-            failPanel.SetActive(false);
+            
         }
 
         public void StopTheGame()
@@ -168,6 +171,8 @@ namespace Managers
 
         public void OnClickedTapToPlayButton()
         {
+            isGameStarted = true;
+            failPanel.SetActive(false);
             StartTheGame();
         }
 

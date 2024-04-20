@@ -204,7 +204,7 @@ namespace Managers
                     }
                     if(shot14==0 && counter14!=ObstacleManager.Instance.lvl1Obs4.Count)
                     {
-                        Debug.Log("Not all of them has dropped");
+                        Debug.Log("Not all of them has dropped14");
                         GameManager.Instance.failPanel.SetActive(true);
                         GameManager.Instance.isGameStarted = false;
                     }
@@ -236,7 +236,7 @@ namespace Managers
                     if(shot15==0 && counter15!=ObstacleManager.Instance.lvl1Obs5.Count)
                     {
                         GameManager.Instance.isGameStarted = false;
-                        Debug.Log("Not all of them has dropped");
+                        Debug.Log("Not all of them has dropped15");
                         GameManager.Instance.failPanel.SetActive(true);
                     }
                 
@@ -266,7 +266,7 @@ namespace Managers
                     if(shot16==0 && counter16!=ObstacleManager.Instance.lvl1Obs6.Count)
                     {
                         GameManager.Instance.isGameStarted = false;
-                        Debug.Log("Not all of them has dropped");
+                        Debug.Log("Not all of them has dropped16");
                         GameManager.Instance.failPanel.SetActive(true);
                     }
                     //7th OBS
@@ -279,13 +279,10 @@ namespace Managers
                         if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
                         {
                             GameManager.Instance.levelSliderBlocks[6].color= Color.red;
-                            Debug.Log("All of them has felt at Obs1");
                             isObs7Complete = false;
-                            Debug.Log("LEVEL 1 HAS ENDED");
                             GameManager.Instance.level = 2;
                             PlayerPrefs.SetInt("level", 2);
                             GameManager.Instance.StopTheGame();
-                            GameManager.Instance.isGameStarted = false;
                             isGame0 = false;
                             isLevel1Complete = true;
                             ObstacleManager.Instance.Platform17.SetActive(false);
@@ -299,15 +296,18 @@ namespace Managers
                             {
                                 GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                             }
+
+                            GameManager.Instance.inGameScore = 0;
+                            isObs1Complete = true;
                         }
+                        if(shot17==0 && counter17!=ObstacleManager.Instance.lvl1Obs7.Count)
+                        {
+                            Debug.Log("Not all of them has dropped17");
+                            GameManager.Instance.failPanel.SetActive(true);
+                            GameManager.Instance.isGameStarted = false;
+                        }
+                    }
                     
-                    }
-                    if(shot17==0 && counter17!=ObstacleManager.Instance.lvl1Obs7.Count)
-                    {
-                        Debug.Log("Not all of them has dropped");
-                        GameManager.Instance.failPanel.SetActive(true);
-                        GameManager.Instance.isGameStarted = false;
-                    }
                 }
             }
             
@@ -318,6 +318,7 @@ namespace Managers
             {
                 Canon.ammo = shot21;
                 Debug.Log("Level 2");
+                isObs1Complete = true;
              if (isLevel1Complete && GameManager.Instance.isGameStarted)
              {
                  //1ST OBS
@@ -327,6 +328,7 @@ namespace Managers
                      GameManager.Instance.failPanel.SetActive(false);
                      if (counter21 == ObstacleManager.Instance.lvl2Obs1.Count)
                      {
+                         GameManager.Instance.failPanel.SetActive(false);
                          ObstacleManager.Instance.Platform21.SetActive(false);
                          ObstacleManager.Instance.Platform22.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
@@ -337,16 +339,16 @@ namespace Managers
                              ObstacleManager.Instance.lvl2Obs2[i].SetActive(true);
                          }
                          isObs2Complete = true;
+                     }
+                     if(shot21==0 && counter21!=ObstacleManager.Instance.lvl2Obs1.Count)
+                     {
+                         Debug.Log("Not all of them has dropped21");
+                         GameManager.Instance.failPanel.SetActive(true);
                          GameManager.Instance.isGameStarted = false;
                      }
                     
                  }
-                 if(shot21==0 && counter21!=ObstacleManager.Instance.lvl2Obs1.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
 
                  //2ND OBS
                 
@@ -373,7 +375,7 @@ namespace Managers
                  }
                  if(shot22==0 && counter12!=ObstacleManager.Instance.lvl2Obs2.Count)
                  {
-                     Debug.Log("Not all of them has dropped");
+                     Debug.Log("Not all of them has dropped 22");
                      GameManager.Instance.failPanel.SetActive(true);
                      GameManager.Instance.isGameStarted = false;
                  }
@@ -401,7 +403,7 @@ namespace Managers
                  }
                  if(shot23==0 && counter13!=ObstacleManager.Instance.lvl2Obs3.Count)
                  {
-                     Debug.Log("Not all of them has dropped");
+                     Debug.Log("Not all of them has dropped 23");
                      GameManager.Instance.failPanel.SetActive(true);
                      GameManager.Instance.isGameStarted = false;
                  }
@@ -430,7 +432,7 @@ namespace Managers
                  }
                  if(shot24==0 && counter14!=ObstacleManager.Instance.lvl2Obs4.Count)
                  {
-                     Debug.Log("Not all of them has dropped");
+                     Debug.Log("Not all of them has dropped 24");
                      GameManager.Instance.failPanel.SetActive(true);
                      GameManager.Instance.isGameStarted = false;
                  }
@@ -459,7 +461,7 @@ namespace Managers
                  }
                  if(shot25==0 && counter15!=ObstacleManager.Instance.lvl2Obs5.Count)
                  {
-                     Debug.Log("Not all of them has dropped");
+                     Debug.Log("Not all of them has dropped 25");
                      GameManager.Instance.failPanel.SetActive(true);
                      GameManager.Instance.isGameStarted = false;
                  }
@@ -483,14 +485,15 @@ namespace Managers
                          }
                          isObs7Complete = true;  
                      }
+                     if(shot26==0 && counter16!=ObstacleManager.Instance.lvl2Obs6.Count)
+                     {
+                         Debug.Log("Not all of them has dropped 26");
+                         GameManager.Instance.failPanel.SetActive(true);
+                         GameManager.Instance.isGameStarted = false;
+                     }
                     
                  }
-                 if(shot26==0 && counter16!=ObstacleManager.Instance.lvl2Obs6.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
                  //7th OBS
                  
                  if (isObs7Complete && shot27 != 0)
@@ -518,16 +521,16 @@ namespace Managers
                          {
                              GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                          }
+                     }
+                     GameManager.Instance.inGameScore = 0;
+                     if(shot27==0 && counter16!=ObstacleManager.Instance.lvl2Obs7.Count)
+                     {
+                         Debug.Log("Not all of them has dropped 27");
+                         GameManager.Instance.failPanel.SetActive(true);
                          GameManager.Instance.isGameStarted = false;
                      }
-                    
                  }
-                 if(shot27==0 && counter16!=ObstacleManager.Instance.lvl2Obs7.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
              }
             }
             
@@ -729,7 +732,7 @@ namespace Managers
                          {
                              GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                          }
-                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.inGameScore = 0;
                      }
                     
                  }
@@ -755,7 +758,7 @@ namespace Managers
 
                 SetLevelText(0, 1);
             }
-            else if (GameManager.Instance.level == 1)
+            else if (GameManager.Instance.level == 1 && GameManager.Instance.isGameStarted)
             {
                 UpdateLevelButtonState(lvl1Button, false);
                 UpdateLevelButtonState(lvl2Button, true);
@@ -763,7 +766,7 @@ namespace Managers
 
                 SetLevelText(1, 2);
             }
-            else if (GameManager.Instance.level == 2)
+            else if (GameManager.Instance.level == 2 && GameManager.Instance.isGameStarted)
             {
                 UpdateLevelButtonState(lvl1Button, false);
                 UpdateLevelButtonState(lvl2Button, false);
@@ -771,7 +774,7 @@ namespace Managers
 
                 SetLevelText(2, 3);
             }
-            else if (GameManager.Instance.level == 3)
+            else if (GameManager.Instance.level == 3 && GameManager.Instance.isGameStarted)
             {
                 SetLevelText(3, 4);
             }
