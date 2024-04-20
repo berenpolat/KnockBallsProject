@@ -324,8 +324,11 @@ namespace Managers
                  BallCountText.text = shot21.ToString();
                  if (isObs1Complete && shot21!=0)
                  {
+                     GameManager.Instance.failPanel.SetActive(false);
                      if (counter21 == ObstacleManager.Instance.lvl2Obs1.Count)
                      {
+                         ObstacleManager.Instance.Platform21.SetActive(false);
+                         ObstacleManager.Instance.Platform22.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs1Complete = false;
@@ -334,6 +337,7 @@ namespace Managers
                              ObstacleManager.Instance.lvl2Obs2[i].SetActive(true);
                          }
                          isObs2Complete = true;
+                         GameManager.Instance.isGameStarted = false;
                      }
                     
                  }
@@ -353,6 +357,9 @@ namespace Managers
                         
                      if (counter22 == ObstacleManager.Instance.lvl2Obs2.Count)
                      {
+                         GameManager.Instance.failPanel.SetActive(false);
+                         ObstacleManager.Instance.Platform22.SetActive(false);
+                         ObstacleManager.Instance.Platform23.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs2Complete = false;
@@ -379,6 +386,8 @@ namespace Managers
                      
                      if (counter23 == ObstacleManager.Instance.lvl2Obs3.Count)
                      {
+                         ObstacleManager.Instance.Platform23.SetActive(false);
+                         ObstacleManager.Instance.Platform24.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs3Complete = false;
@@ -409,6 +418,8 @@ namespace Managers
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs4Complete = false;
+                         ObstacleManager.Instance.Platform24.SetActive(false);
+                         ObstacleManager.Instance.Platform25.SetActive(true);
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs5.Count(); i++)
                          {
                              ObstacleManager.Instance.lvl2Obs5[i].SetActive(true);
@@ -433,6 +444,8 @@ namespace Managers
                         
                      if (counter25 == ObstacleManager.Instance.lvl2Obs5.Count)
                      {
+                         ObstacleManager.Instance.Platform25.SetActive(false);
+                         ObstacleManager.Instance.Platform26.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs5Complete = false;
@@ -459,6 +472,8 @@ namespace Managers
                         
                      if (counter26 == ObstacleManager.Instance.lvl2Obs6.Count)
                      {
+                         ObstacleManager.Instance.Platform26.SetActive(false);
+                         ObstacleManager.Instance.Platform27.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs6Complete = false;
@@ -484,6 +499,8 @@ namespace Managers
                         
                      if (counter27 == ObstacleManager.Instance.lvl2Obs7.Count)
                      {
+                         ObstacleManager.Instance.Platform27.SetActive(false);
+                         ObstacleManager.Instance.Platform31.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                          isObs7Complete = false;
                          Debug.Log("LEVEL 2 HAS ENDED");
@@ -501,6 +518,7 @@ namespace Managers
                          {
                              GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                          }
+                         GameManager.Instance.isGameStarted = false;
                      }
                     
                  }
@@ -530,6 +548,8 @@ namespace Managers
                      BallCountText.text = shot31.ToString();
                      if (counter31 == ObstacleManager.Instance.lvl3Obs1.Count)
                      {
+                         ObstacleManager.Instance.Platform31.SetActive(false);
+                         ObstacleManager.Instance.Platform32.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs1Complete = false;
@@ -555,6 +575,8 @@ namespace Managers
                      BallCountText.text = shot32.ToString();
                      if (counter32 == ObstacleManager.Instance.lvl3Obs2.Count)
                      {
+                         ObstacleManager.Instance.Platform32.SetActive(false);
+                         ObstacleManager.Instance.Platform33.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs2Complete = false;
@@ -581,6 +603,8 @@ namespace Managers
                         
                      if (counter33 == ObstacleManager.Instance.lvl3Obs3.Count)
                      {
+                         ObstacleManager.Instance.Platform33.SetActive(false);
+                         ObstacleManager.Instance.Platform34.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs3Complete = false;
@@ -605,6 +629,8 @@ namespace Managers
                      BallCountText.text = shot34.ToString();
                      if (counter34 == ObstacleManager.Instance.lvl3Obs4.Count)
                      {
+                         ObstacleManager.Instance.Platform34.SetActive(false);
+                         ObstacleManager.Instance.Platform35.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs4Complete = false;
@@ -631,6 +657,8 @@ namespace Managers
                         
                      if (counter35 == ObstacleManager.Instance.lvl3Obs5.Count)
                      {
+                         ObstacleManager.Instance.Platform35.SetActive(false);
+                         ObstacleManager.Instance.Platform36.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs5Complete = false;
@@ -656,6 +684,8 @@ namespace Managers
                     
                      if (counter36 == ObstacleManager.Instance.lvl3Obs6.Count)
                      {
+                         ObstacleManager.Instance.Platform36.SetActive(false);
+                         ObstacleManager.Instance.Platform37.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs6Complete = false;
@@ -680,6 +710,8 @@ namespace Managers
                         
                      if (counter37 == ObstacleManager.Instance.lvl3Obs7.Count)
                      {
+                         ObstacleManager.Instance.Platform37.SetActive(false);
+                         ObstacleManager.Instance.Platform11.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                          isObs7Complete = false;
                          Debug.Log("LEVEL 3 HAS ENDED");
@@ -697,6 +729,7 @@ namespace Managers
                          {
                              GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                          }
+                         GameManager.Instance.isGameStarted = false;
                      }
                     
                  }
