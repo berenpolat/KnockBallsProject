@@ -18,7 +18,7 @@ namespace Managers
         public int bestScore;
         public int inGameScore;
         public int coin;
-        public bool isGameStarted;
+        public bool isGameStarted = false;
         [SerializeField] private GameObject obsHolder;
         private bool _movingRight = true;
         #endregion
@@ -84,10 +84,12 @@ namespace Managers
                 inGameScore = 0;
                 LevelManager.Instance.isObs1Complete = true;
                 failPanel.SetActive(false);
+                ObstacleManager.Instance.Platform11.SetActive(true);
                 for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
                 }
+               
             }
 
             if (level == 2)
@@ -96,6 +98,7 @@ namespace Managers
                 LevelManager.Instance.isObs1Complete = true;
                 inGameScore = 0;
                 failPanel.SetActive(false);
+                ObstacleManager.Instance.Platform21.SetActive(true);
                 for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
@@ -108,6 +111,7 @@ namespace Managers
                 LevelManager.Instance.isGame0 = false;
                 inGameScore = 0;
                 failPanel.SetActive(false);
+                ObstacleManager.Instance.Platform31.SetActive(true);
                 for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count; i++)
                 {
                     ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
@@ -139,6 +143,7 @@ namespace Managers
         {
             startPanel.SetActive(true);
             inGamePanel.SetActive(false);
+            isGameStarted = false;
         }
 
         private void MoveObsHolderAtTheStart()

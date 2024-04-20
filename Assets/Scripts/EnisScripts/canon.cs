@@ -30,7 +30,7 @@ public class Canon : MonoBehaviour
     
     private void Fire(Vector3 targetPosition)
     {
-        if (ammo > 0 )
+        if (ammo > 0 ) 
         {
           dir = targetPosition - bulletPosition.position;
         

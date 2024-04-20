@@ -37,6 +37,33 @@ namespace Managers
       public List<List<GameObject>> Lvl2Objects;
       public List<List<GameObject>> Lvl3Objects;
 
+
+      [Header(" Lvl1 Platforms")] 
+      public GameObject Platform11;
+      public GameObject Platform12;
+      public GameObject Platform13;
+      public GameObject Platform14;
+      public GameObject Platform15;
+      public GameObject Platform16;
+      public GameObject Platform17;
+      [Header(" Lvl2 Platforms")]
+      public GameObject Platform21;
+      public GameObject Platform22;
+      public GameObject Platform23;
+      public GameObject Platform24;
+      public GameObject Platform25;
+      public GameObject Platform26;
+      public GameObject Platform27;
+      [Header(" Lvl,3 Platforms")]
+      public GameObject Platform31;
+      public GameObject Platform32;
+      public GameObject Platform33;
+      public GameObject Platform34;
+      public GameObject Platform35;
+      public GameObject Platform36;
+      public GameObject Platform37;
+
+
       #region Singleton
       public static ObstacleManager Instance { get; set; }
     
