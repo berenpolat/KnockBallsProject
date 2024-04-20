@@ -7,12 +7,18 @@ public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletPosition;
+    private Animator animator;
     public Plane plane = new Plane(Vector3.forward, 0);
     private Vector3 dir;
     [SerializeField] private float bulletSpeed;
      public static int ammo;
 
-    private void Update()
+     private void Start()
+     {
+         animator = GetComponent<Animator>();
+     }
+
+     private void Update()
     {
         float distance;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,7 +43,8 @@ public class Canon : MonoBehaviour
           GameObject bullet = objectPool.instance.getPooledObject();
 
           if (bullet != null)
-          {
+          { 
+              animator.SetTrigger("Shot");
             bullet.transform.position = bulletPosition.position;
             bullet.SetActive(true);
             ammo--;
