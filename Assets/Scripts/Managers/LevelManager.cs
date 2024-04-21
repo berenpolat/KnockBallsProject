@@ -266,6 +266,7 @@ namespace Managers
                     }
                     if(shot16==0 && counter16!=ObstacleManager.Instance.lvl1Obs6.Count)
                     {
+                        
                         GameManager.Instance.isGameStarted = false;
                         Debug.Log("Not all of them has dropped16");
                         GameManager.Instance.failPanel.SetActive(true);
@@ -279,6 +280,7 @@ namespace Managers
                         
                         if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
                         {
+                            Canon.ammo = shot21;
                             GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                             isObs7Complete = false;
                             GameManager.Instance.level = 2;
@@ -317,7 +319,7 @@ namespace Managers
 
             if (GameManager.Instance.level == 2 && GameManager.Instance.isGameStarted)
             {
-                Canon.ammo = shot21;
+               
                 Debug.Log("Level 2");
                 isObs1Complete = true;
              if (isLevel1Complete && GameManager.Instance.isGameStarted)
@@ -329,6 +331,7 @@ namespace Managers
                      GameManager.Instance.failPanel.SetActive(false);
                      if (counter21 == ObstacleManager.Instance.lvl2Obs1.Count)
                      {
+                         Canon.ammo = shot22 + currentAmmo;
                          GameManager.Instance.failPanel.SetActive(false);
                          ObstacleManager.Instance.Platform21.SetActive(false);
                          ObstacleManager.Instance.Platform22.SetActive(true);
@@ -361,6 +364,7 @@ namespace Managers
                         
                      if (counter22 == ObstacleManager.Instance.lvl2Obs2.Count)
                      {
+                         Canon.ammo = shot23 + currentAmmo;
                          GameManager.Instance.failPanel.SetActive(false);
                          ObstacleManager.Instance.Platform22.SetActive(false);
                          ObstacleManager.Instance.Platform23.SetActive(true);
@@ -391,6 +395,7 @@ namespace Managers
                      
                      if (counter23 == ObstacleManager.Instance.lvl2Obs3.Count)
                      {
+                         Canon.ammo = shot24 + currentAmmo;
                          ObstacleManager.Instance.Platform23.SetActive(false);
                          ObstacleManager.Instance.Platform24.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
@@ -421,6 +426,7 @@ namespace Managers
                         
                      if (counter24 == ObstacleManager.Instance.lvl2Obs4.Count)
                      {
+                         Canon.ammo = shot25 + currentAmmo;
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                          Debug.Log("All of them has felt at Obs1");
                          isObs4Complete = false;
@@ -451,6 +457,7 @@ namespace Managers
                         
                      if (counter25 == ObstacleManager.Instance.lvl2Obs5.Count)
                      {
+                         Canon.ammo = shot26 + currentAmmo;
                          ObstacleManager.Instance.Platform25.SetActive(false);
                          ObstacleManager.Instance.Platform26.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
@@ -480,6 +487,7 @@ namespace Managers
                         
                      if (counter26 == ObstacleManager.Instance.lvl2Obs6.Count)
                      {
+                         Canon.ammo = shot27 + currentAmmo;
                          ObstacleManager.Instance.Platform26.SetActive(false);
                          ObstacleManager.Instance.Platform27.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
@@ -509,6 +517,7 @@ namespace Managers
                         
                      if (counter27 == ObstacleManager.Instance.lvl2Obs7.Count)
                      {
+                         Canon.ammo = shot31;
                          ObstacleManager.Instance.Platform27.SetActive(false);
                          ObstacleManager.Instance.Platform31.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[6].color= Color.red;
@@ -558,6 +567,7 @@ namespace Managers
                      
                      if (counter31 == ObstacleManager.Instance.lvl3Obs1.Count)
                      {
+                         Canon.ammo = shot32 + currentAmmo;
                          ObstacleManager.Instance.Platform31.SetActive(false);
                          ObstacleManager.Instance.Platform32.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[0].color= Color.red;
@@ -585,6 +595,7 @@ namespace Managers
                    
                      if (counter32 == ObstacleManager.Instance.lvl3Obs2.Count)
                      {
+                         Canon.ammo = shot33 + currentAmmo;
                          ObstacleManager.Instance.Platform32.SetActive(false);
                          ObstacleManager.Instance.Platform33.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[1].color= Color.red;
@@ -613,6 +624,7 @@ namespace Managers
                         
                      if (counter33 == ObstacleManager.Instance.lvl3Obs3.Count)
                      {
+                         Canon.ammo = shot34 + currentAmmo;
                          ObstacleManager.Instance.Platform33.SetActive(false);
                          ObstacleManager.Instance.Platform34.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[2].color= Color.red;
@@ -639,6 +651,7 @@ namespace Managers
                    
                      if (counter34 == ObstacleManager.Instance.lvl3Obs4.Count)
                      {
+                         Canon.ammo = shot35 + currentAmmo;
                          ObstacleManager.Instance.Platform34.SetActive(false);
                          ObstacleManager.Instance.Platform35.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[3].color= Color.red;
@@ -667,6 +680,7 @@ namespace Managers
                         
                      if (counter35 == ObstacleManager.Instance.lvl3Obs5.Count)
                      {
+                         Canon.ammo = shot36 + currentAmmo;
                          ObstacleManager.Instance.Platform35.SetActive(false);
                          ObstacleManager.Instance.Platform36.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[4].color= Color.red;
@@ -694,6 +708,7 @@ namespace Managers
                     
                      if (counter36 == ObstacleManager.Instance.lvl3Obs6.Count)
                      {
+                         Canon.ammo = shot37 + currentAmmo;
                          ObstacleManager.Instance.Platform36.SetActive(false);
                          ObstacleManager.Instance.Platform37.SetActive(true);
                          GameManager.Instance.levelSliderBlocks[5].color= Color.red;
