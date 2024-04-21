@@ -14,7 +14,7 @@ namespace Managers
     {
         #region General Variables
 
-        public int level=0;
+        public int level;
         public int bestScore;
         public int inGameScore;
         public int coin;
@@ -75,12 +75,13 @@ namespace Managers
         // Start is called before the first frame update
         void Start()
         {
-            
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
             if (level == 0)
             {
+                level = 1;
+                PlayerPrefs.SetInt("level",1);
                 LevelManager.Instance.isGame0 = true;
                 inGameScore = 0;
                 LevelManager.Instance.isObs1Complete = true;
@@ -139,7 +140,6 @@ namespace Managers
             startPanel.SetActive(false);
             inGamePanel.SetActive(true);
             obsHolder.transform.DOMove(new Vector3(0,-8.5f,13.6999998f),0.5F);
-            
         }
 
         public void StopTheGame()
@@ -190,6 +190,64 @@ namespace Managers
         {
             levelTreePanel.SetActive(false);
         }
+
+        public void OnClickDisplayLevel1Button()
+        {
+            isGameStarted = true;
+            LevelManager.Instance.isGame0 = true;
+            levelTreePanel.SetActive(false);
+            StartTheGame();
+            level = 1;
+            PlayerPrefs.SetInt("level",1);
+            LevelManager.Instance.isGame0 = true;
+            inGameScore = 0;
+            LevelManager.Instance.isObs1Complete = true;
+            failPanel.SetActive(false);
+            ObstacleManager.Instance.Platform11.SetActive(true);
+            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs1.Count; i++)
+            {
+                ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
+            }
+               
+            
+        }
+
+        public void OnClickDisplayLevel2Button()
+        {
+            isGameStarted = true;
+            LevelManager.Instance.isLevel1Complete = true;
+            levelTreePanel.SetActive(false);
+            StartTheGame();
+            LevelManager.Instance.isLevel1Complete = true;
+            LevelManager.Instance.isObs1Complete = true;
+            inGameScore = 0;
+            failPanel.SetActive(false);
+            ObstacleManager.Instance.Platform21.SetActive(true);
+            for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count; i++)
+            {
+                ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
+            }
+        }
+
+        public void OnClickDisplayLevel3Button()
+        {
+            isGameStarted = true;
+            LevelManager.Instance.isLevel2Complete = true;
+            levelTreePanel.SetActive(false);
+            StartTheGame();
+            LevelManager.Instance.isLevel2Complete = true;
+            LevelManager.Instance.isObs1Complete = false;
+            LevelManager.Instance.isGame0 = false;
+            inGameScore = 0;
+            failPanel.SetActive(false);
+            ObstacleManager.Instance.Platform31.SetActive(true);
+            for (int i = 0; i < ObstacleManager.Instance.lvl3Obs1.Count; i++)
+            {
+                ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
+            }
+            
+        }
+        
         #endregion
         
     }

@@ -90,7 +90,7 @@ namespace Managers
         private void Update()
         {
             UpdateLevelUI();
-            if (GameManager.Instance.level ==0 && GameManager.Instance.isGameStarted)
+            if (GameManager.Instance.level ==1 && GameManager.Instance.isGameStarted)
             {
                 if (isGame0 && GameManager.Instance.isGameStarted)
                 {
