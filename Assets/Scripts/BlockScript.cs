@@ -67,6 +67,7 @@ public class BlockScript : MonoBehaviour
          GameManager.Instance.inGameScore++;
          LevelManager.Instance.counter22++;
          Destroy(this.gameObject);
+         
       }
       if (other.gameObject.CompareTag($"BottomCollider") && this.gameObject.CompareTag("23"))
       {

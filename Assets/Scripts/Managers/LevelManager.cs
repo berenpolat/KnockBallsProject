@@ -336,7 +336,8 @@ namespace Managers
                          isObs1Complete = false;
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs2.Count(); i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs2[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs2[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs2[i].SetActive(true);
                          }
                          isObs2Complete = true;
                      }
@@ -367,7 +368,8 @@ namespace Managers
                          isObs2Complete = false;
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs3.Count; i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs3[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs3[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs3[i].SetActive(true);
                          }
                          isObs3Complete = true;
                      }
@@ -395,7 +397,8 @@ namespace Managers
                          isObs3Complete = false;
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs4.Count(); i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs4[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs4[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs4[i].SetActive(true);
                          }
                          isObs4Complete = true;  
                      }
@@ -424,7 +427,8 @@ namespace Managers
                          ObstacleManager.Instance.Platform25.SetActive(true);
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs5.Count(); i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs5[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs5[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs5[i].SetActive(true);
                          }
                          isObs5Complete = true;  
                      }
@@ -453,7 +457,8 @@ namespace Managers
                          isObs5Complete = false;
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs6.Count(); i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs6[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs6[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs6[i].SetActive(true);
                          }
                          isObs6Complete = true;  
                      }
@@ -481,7 +486,8 @@ namespace Managers
                          isObs6Complete = false;
                          for (int i = 0; i < ObstacleManager.Instance.lvl2Obs7.Count(); i++)
                          {
-                             ObstacleManager.Instance.lvl2Obs7[i].SetActive(true);
+                             if(ObstacleManager.Instance.lvl2Obs7[i]!=null)
+                                ObstacleManager.Instance.lvl2Obs7[i].SetActive(true);
                          }
                          isObs7Complete = true;  
                      }
