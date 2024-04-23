@@ -21950,9 +21950,9 @@ MonoBehaviour:
   - {fileID: 1673303575}
   - {fileID: 456055851}
   lvl1Obs2:
-  - {fileID: 1750131947}
-  - {fileID: 1013971387}
-  - {fileID: 1936810858}
+  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
+  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
+  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
   - {fileID: 47065202}
   - {fileID: 1155662140}
   - {fileID: 998151674}
