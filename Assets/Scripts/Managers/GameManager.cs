@@ -3,10 +3,12 @@ using System.Threading;
 using Base.State;
 using DG.Tweening;
 using State;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -179,23 +181,23 @@ namespace Managers
         public void OnClickedInGameBackButton()
         {
             backToMenuPanel.SetActive(true);
+            inGamePanel.SetActive(false);
         }
 
-        public void OnClickedInGameBackButtonCancel()
+        public void OnClickedInGameBackButtonNo()
         {
             backToMenuPanel.SetActive(false);
+            inGamePanel.SetActive(true);
         }
 
         public void OnClickedInGameBackButtonOK()
         {
-            Debug.Log("ana sahneye dönüldü");
+            SceneManager.LoadSceneAsync(0);
         }
-
         public void OnClickLevelTreeDisplayButton()
         {
             levelTreePanel.SetActive(true);
         }
-
         public void OnClickCancelLevelTreeButton()
         {
             levelTreePanel.SetActive(false);
