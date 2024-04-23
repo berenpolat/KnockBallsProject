@@ -2160,6 +2160,10 @@ MonoBehaviour:
   inGameLvlText: {fileID: 152283788}
   inGameNextLvlText: {fileID: 1432467847}
   BallCountText: {fileID: 1534429947}
+  winPanel: {fileID: 905030895}
+  winPanelLevelText: {fileID: 158244028}
+  winPanelInGameScoreText: {fileID: 1333925906}
+  winPanelCoinText: {fileID: 1272261887}
 --- !u!114 &167539801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24119,6 +24123,7 @@ MonoBehaviour:
   lvlText: {fileID: 1692581241}
   bestScoreText: {fileID: 1887720805}
   inGameScoreText: {fileID: 1054150863}
+  coinText: {fileID: 92706281}
 --- !u!1 &1229326339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3778644264426962316, guid: 2d015b862bcfb5841979d2972d944bf6,

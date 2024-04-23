@@ -45,6 +45,12 @@ namespace Managers
         private ColorBlock cb;
 
         private int currentAmmo;
+
+        [SerializeField] private GameObject winPanel;
+        [SerializeField] private Text winPanelLevelText;
+        [SerializeField] private Text winPanelInGameScoreText;
+        [SerializeField] private Text winPanelCoinText;
+        
        
         
         #region Singleton
@@ -302,6 +308,12 @@ namespace Managers
 
                             GameManager.Instance.inGameScore = 0;
                             isObs1Complete = true;
+                            winPanelInGameScoreText.text = Canon.ammo.ToString();
+                            winPanelCoinText.text = "+10";
+                            winPanelLevelText.text = "LEVEL 2";
+                            winPanel.SetActive(true);
+                            GameManager.Instance.coin = 10;
+                            PlayerPrefs.SetInt("coin",10);
                         }
                         if(shot17==0 && counter17!=ObstacleManager.Instance.lvl1Obs7.Count)
                         {

@@ -50,6 +50,7 @@ namespace Managers
         [SerializeField] private Text lvlText;
         [SerializeField] private Text bestScoreText;
         [SerializeField] private Text inGameScoreText;
+        [SerializeField] private Text coinText;
 
         #endregion
         #region Singleton
@@ -132,6 +133,7 @@ namespace Managers
             }
             lvlText.text =  "Lvl. " +  PlayerPrefs.GetInt("level").ToString();
             bestScoreText.text ="BEST: " + PlayerPrefs.GetInt("bestScore").ToString();
+            coinText.text = PlayerPrefs.GetInt("coin").ToString();
         }
         #endregion
 
