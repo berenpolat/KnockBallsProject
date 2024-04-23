@@ -5843,7 +5843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1208051939}
         m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
         m_MethodName: OnClickCancelLevelTreeButton
         m_Mode: 1
@@ -8440,9 +8440,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Managers.LevelManager, Assembly-CSharp
-        m_MethodName: OnClickedLevel3Button
+      - m_Target: {fileID: 1208051939}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: OnClickDisplayLevel3Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21950,9 +21950,9 @@ MonoBehaviour:
   - {fileID: 1673303575}
   - {fileID: 456055851}
   lvl1Obs2:
-  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
-  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
-  - {fileID: 8513320814839696192, guid: 205f90b55c42a7244a0421169b88683e, type: 3}
+  - {fileID: 1750131947}
+  - {fileID: 1013971387}
+  - {fileID: 1936810858}
   - {fileID: 47065202}
   - {fileID: 1155662140}
   - {fileID: 998151674}
@@ -33492,9 +33492,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Managers.LevelManager, Assembly-CSharp
-        m_MethodName: OnClickedLevel2Button
+      - m_Target: {fileID: 1208051939}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: OnClickDisplayLevel2Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36467,9 +36467,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Managers.LevelManager, Assembly-CSharp
-        m_MethodName: OnClickedLevel1Button
+      - m_Target: {fileID: 1208051939}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: OnClickDisplayLevel1Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

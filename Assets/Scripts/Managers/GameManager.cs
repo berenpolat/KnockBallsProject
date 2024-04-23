@@ -80,9 +80,8 @@ namespace Managers
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
-            if (level == 0)
+            if (level == 0 || level==1)
             {
-                level = 1;
                 PlayerPrefs.SetInt("level",1);
                 LevelManager.Instance.isGame0 = true;
                 inGameScore = 0;
@@ -222,8 +221,7 @@ namespace Managers
             }
                
             
-        }
-
+        } 
         public void OnClickDisplayLevel2Button()
         {
             isGameStarted = true;
