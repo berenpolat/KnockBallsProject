@@ -38,9 +38,6 @@ public class Canon : MonoBehaviour
                 Fire(point);
             }
         }
-        
-       
-        
     }
     
     private void Fire(Vector3 targetPosition)

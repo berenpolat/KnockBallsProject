@@ -181,6 +181,16 @@ namespace Managers
             backToMenuPanel.SetActive(true);
         }
 
+        public void OnClickedInGameBackButtonCancel()
+        {
+            backToMenuPanel.SetActive(false);
+        }
+
+        public void OnClickedInGameBackButtonOK()
+        {
+            Debug.Log("ana sahneye dönüldü");
+        }
+
         public void OnClickLevelTreeDisplayButton()
         {
             levelTreePanel.SetActive(true);
