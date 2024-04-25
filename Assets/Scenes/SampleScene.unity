@@ -41118,6 +41118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4657984582255354875, guid: ef54769d4bca22c4e8dc34546b5e9754,
     type: 3}
+  startPanel: {fileID: 358004066}
+  pausePanel: {fileID: 1947388613}
   bulletPosition: {fileID: 1946777352}
   bulletSpeed: 30
 --- !u!95 &2128730125

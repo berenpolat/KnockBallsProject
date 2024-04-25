@@ -7,9 +7,11 @@ using UnityEngine;
 public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private Transform bulletPosition;
     
-    private GameManager gameManager;
+    
     
     private Animator animator;
     
@@ -23,16 +25,17 @@ public class Canon : MonoBehaviour
      private void Start()
      {
          animator = GetComponent<Animator>();
+         
      }
 
      private void Update()
     {
         float distance;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (plane.Raycast(ray, out distance))
+        if (plane.Raycast(ray, out distance) )
         {
             Vector3 point = ray.GetPoint(distance);
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !startPanel.activeSelf && !pausePanel.activeSelf)
             {
                 transform.LookAt(point); 
                 Fire(point);
@@ -42,7 +45,7 @@ public class Canon : MonoBehaviour
     
     private void Fire(Vector3 targetPosition)
     {
-             if (ammo > 0 ) 
+             if (ammo > 0) 
                {
                  dir = targetPosition - bulletPosition.position;
         
