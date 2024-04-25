@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class bulletBreak : MonoBehaviour
 {
-    [SerializeField] private float forceMultiplier; // Kuvvet çarpanı
+    [SerializeField] private float forceMultiplier; 
     private int CurrentAmmo;
 
     private void Update()
@@ -18,7 +18,7 @@ public class bulletBreak : MonoBehaviour
         if (other.gameObject.CompareTag("breakble"))
         {
             
-            // Tetikleyici çarpışma gerçekleştiğinde çarpma noktasındaki objeyi alın
+            
             GameObject collidedObject = other.gameObject;
             BoxCollider boxCollider = collidedObject.GetComponent<BoxCollider>();
             boxCollider.enabled = false;
@@ -27,14 +27,14 @@ public class bulletBreak : MonoBehaviour
 
             foreach (Transform child in childTransforms)
             {
-                // Child objelerin rigidbody bileşenlerini alın
+              
                 Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
                 if (childRigidbody != null)
                 {
-                    // Çarpışma noktasından çocuğa doğru olan vektörü hesaplayın
+                   
                     Vector3 forceDirection = child.position - transform.position;
 
-                    // Kuvveti uygulayın
+                   
                     childRigidbody.AddForce(forceDirection.normalized * forceMultiplier, ForceMode.Impulse);
                 }
             }
