@@ -2622,6 +2622,27 @@ MonoBehaviour:
   lvl3Obs5: []
   lvl3Obs6: []
   lvl3Obs7: []
+  Platform11: {fileID: 0}
+  Platform12: {fileID: 0}
+  Platform13: {fileID: 0}
+  Platform14: {fileID: 0}
+  Platform15: {fileID: 0}
+  Platform16: {fileID: 0}
+  Platform17: {fileID: 0}
+  Platform21: {fileID: 0}
+  Platform22: {fileID: 0}
+  Platform23: {fileID: 0}
+  Platform24: {fileID: 0}
+  Platform25: {fileID: 0}
+  Platform26: {fileID: 0}
+  Platform27: {fileID: 0}
+  Platform31: {fileID: 0}
+  Platform32: {fileID: 0}
+  Platform33: {fileID: 0}
+  Platform34: {fileID: 0}
+  Platform35: {fileID: 0}
+  Platform36: {fileID: 0}
+  Platform37: {fileID: 0}
 --- !u!1 &294783336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,6 +5673,7 @@ MonoBehaviour:
   lvlText: {fileID: 1692581241}
   bestScoreText: {fileID: 1887720805}
   inGameScoreText: {fileID: 0}
+  coinText: {fileID: 0}
 --- !u!4 &799271661
 Transform:
   m_ObjectHideFlags: 0
@@ -11098,7 +11120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 1dccea703ee6c09419a21311a7ac0de9, type: 2}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.70980394}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12847,6 +12869,10 @@ MonoBehaviour:
   inGameLvlText: {fileID: 365849381}
   inGameNextLvlText: {fileID: 621427163}
   BallCountText: {fileID: 0}
+  winPanel: {fileID: 0}
+  winPanelLevelText: {fileID: 0}
+  winPanelInGameScoreText: {fileID: 0}
+  winPanelCoinText: {fileID: 0}
 --- !u!1 &1926176392
 GameObject:
   m_ObjectHideFlags: 0
@@ -14905,6 +14931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
+  startPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
   bulletPosition: {fileID: 1946777352}
   bulletSpeed: 25
 --- !u!1 &2134315206
