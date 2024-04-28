@@ -10971,7 +10971,7 @@ GameObject:
   - component: {fileID: 743295044}
   m_Layer: 5
   m_Name: BallCounter
-  m_TagString: ShootCounter
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28890,7 +28890,7 @@ GameObject:
   - component: {fileID: 1534429947}
   m_Layer: 5
   m_Name: ShootCount
-  m_TagString: Untagged
+  m_TagString: ShootCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
