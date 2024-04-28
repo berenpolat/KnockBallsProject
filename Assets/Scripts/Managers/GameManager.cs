@@ -301,7 +301,13 @@ namespace Managers
             inGamePanel.SetActive(false);
             startPanel.SetActive(true);
         }
-        
+
+        public void OnClickCloseFailPanel()
+        {
+            failPanel.SetActive(false);
+            inGamePanel.SetActive(false);
+            startPanel.SetActive(true);
+        }
         #endregion
         
     }
