@@ -14973,7 +14973,7 @@ MonoBehaviour:
   inGamePanel: {fileID: 1077482688}
   backToMenuPanel: {fileID: 1947388613}
   levelTreePanel: {fileID: 63507360}
-  failPanel: {fileID: 2117983146}
+  failPanel: {fileID: 320065569}
   levelSliderBlocks:
   - {fileID: 772201797}
   - {fileID: 657800645}

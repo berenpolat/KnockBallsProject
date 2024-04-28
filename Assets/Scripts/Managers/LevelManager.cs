@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,7 +51,8 @@ namespace Managers
         [SerializeField] private Text winPanelLevelText;
         [SerializeField] private Text winPanelInGameScoreText;
         [SerializeField] private Text winPanelCoinText;
-        
+
+        private bool isActivated = false;
        
         
         #region Singleton
@@ -89,9 +92,13 @@ namespace Managers
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
             Canon.ammo = shot11;
-            
         }
-
+        IEnumerator WaitForThreeSeconds(float delaytime)
+        {
+            yield return new WaitForSeconds(delaytime);
+            isActivated = true;
+            Debug.Log("Three seconds have passed!");
+        }
         private void Update()
         {
             UpdateLevelUI();
@@ -120,14 +127,20 @@ namespace Managers
                             GameManager.Instance.levelSliderBlocks[0].color= Color.red;
                             
                         }
-                    
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter11 != ObstacleManager.Instance.lvl1Obs1.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
                     }
-                    if(Canon.ammo==0 && counter11!=ObstacleManager.Instance.lvl1Obs1.Count)
-                    {
-                        Debug.Log("Not all of them has dropped");
-                        GameManager.Instance.failPanel.SetActive(true);
-                        GameManager.Instance.isGameStarted = false;
-                    }
+                   
+
 
                     //2ND OBS
                     if (isObs2Complete && shot12 != 0 && GameManager.Instance.isGameStarted)
@@ -147,14 +160,19 @@ namespace Managers
                             isObs3Complete = true;
                             GameManager.Instance.levelSliderBlocks[1].color= Color.red;
                         }
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter12 != ObstacleManager.Instance.lvl1Obs2.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
+                    }
                     
-                    }
-                    if(Canon.ammo==0 && counter12!=ObstacleManager.Instance.lvl1Obs2.Count)
-                    {
-                        Debug.Log("Not all of them has dropped");
-                        GameManager.Instance.isGameStarted = false;
-                        GameManager.Instance.failPanel.SetActive(true);
-                    }
                 
                     //3RD OBS
                     
@@ -178,14 +196,19 @@ namespace Managers
                             isObs4Complete = true;  
                             GameManager.Instance.levelSliderBlocks[2].color= Color.red;
                         }
-                    
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter13 != ObstacleManager.Instance.lvl1Obs3.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
                     }
-                    if(Canon.ammo==0 && counter13!=ObstacleManager.Instance.lvl1Obs3.Count)
-                    {
-                        Debug.Log("Not all of them has dropped");
-                        GameManager.Instance.failPanel.SetActive(true);
-                        GameManager.Instance.isGameStarted = false;
-                    }
+                   
                 
                     //4th OBS
                     
@@ -206,14 +229,19 @@ namespace Managers
                             isObs5Complete = true;  
                             GameManager.Instance.levelSliderBlocks[3].color= Color.red;
                         }
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter14 != ObstacleManager.Instance.lvl1Obs4.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
+                    }
                     
-                    }
-                    if(Canon.ammo==0 && counter14!=ObstacleManager.Instance.lvl1Obs4.Count)
-                    {
-                        Debug.Log("Not all of them has dropped14");
-                        GameManager.Instance.failPanel.SetActive(true);
-                        GameManager.Instance.isGameStarted = false;
-                    }
                
                 
                     //5th OBS
@@ -237,14 +265,19 @@ namespace Managers
                             isObs6Complete = true;  
                             GameManager.Instance.levelSliderBlocks[4].color= Color.red;
                         }
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter15 != ObstacleManager.Instance.lvl1Obs5.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
+                    }
                     
-                    }
-                    if(Canon.ammo==0 && counter15!=ObstacleManager.Instance.lvl1Obs5.Count)
-                    {
-                        GameManager.Instance.isGameStarted = false;
-                        Debug.Log("Not all of them has dropped15");
-                        GameManager.Instance.failPanel.SetActive(true);
-                    }
                 
                     //6th OBS
                     
@@ -267,15 +300,19 @@ namespace Managers
                             isObs7Complete = true;  
                             GameManager.Instance.levelSliderBlocks[5].color= Color.red;
                         }
-                    
+                        if (Canon.ammo == 0)
+                        {
+                            StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                        }
+
+                        if (isActivated && Canon.ammo == 0 && counter16 != ObstacleManager.Instance.lvl1Obs6.Count)
+                        {
+                            GameManager.Instance.isGameStarted = false;
+                            GameManager.Instance.failPanel.SetActive(true);
+                        }
                     }
-                    if(Canon.ammo==0 && counter16!=ObstacleManager.Instance.lvl1Obs6.Count)
-                    {
-                        
-                        GameManager.Instance.isGameStarted = false;
-                        Debug.Log("Not all of them has dropped16");
-                        GameManager.Instance.failPanel.SetActive(true);
-                    }
+                   
                     //7th OBS
                    
                     
@@ -356,11 +393,16 @@ namespace Managers
                          }
                          isObs2Complete = true;
                      }
-                     if(Canon.ammo==0 && counter21!=ObstacleManager.Instance.lvl2Obs1.Count)
+                     if (Canon.ammo == 0)
                      {
-                         Debug.Log("Not all of them has dropped21");
-                         GameManager.Instance.failPanel.SetActive(true);
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter21 != ObstacleManager.Instance.lvl2Obs1.Count)
+                     {
                          GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
                      }
                     
                  }
@@ -391,11 +433,16 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter22!=ObstacleManager.Instance.lvl2Obs2.Count)
+                 if (Canon.ammo == 0)
                  {
-                     Debug.Log("Not all of them has dropped 22");
-                     GameManager.Instance.failPanel.SetActive(true);
+                     StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                 }
+
+                 if (isActivated && Canon.ammo == 0 && counter22 != ObstacleManager.Instance.lvl2Obs2.Count)
+                 {
                      GameManager.Instance.isGameStarted = false;
+                     GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //3RD OBS
@@ -421,11 +468,16 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter23!=ObstacleManager.Instance.lvl2Obs3.Count)
+                 if (Canon.ammo == 0)
                  {
-                     Debug.Log("Not all of them has dropped 23");
-                     GameManager.Instance.failPanel.SetActive(true);
+                     StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                 }
+
+                 if (isActivated && Canon.ammo == 0 && counter23 != ObstacleManager.Instance.lvl2Obs3.Count)
+                 {
                      GameManager.Instance.isGameStarted = false;
+                     GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //4th OBS
@@ -452,11 +504,16 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter24!=ObstacleManager.Instance.lvl2Obs4.Count)
+                 if (Canon.ammo == 0)
                  {
-                     Debug.Log("Not all of them has dropped 24");
-                     GameManager.Instance.failPanel.SetActive(true);
+                     StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                 }
+
+                 if (isActivated && Canon.ammo == 0 && counter24 != ObstacleManager.Instance.lvl2Obs4.Count)
+                 {
                      GameManager.Instance.isGameStarted = false;
+                     GameManager.Instance.failPanel.SetActive(true);
                  }
                
                 
@@ -483,11 +540,16 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter25!=ObstacleManager.Instance.lvl2Obs5.Count)
+                 if (Canon.ammo == 0)
                  {
-                     Debug.Log("Not all of them has dropped 25");
-                     GameManager.Instance.failPanel.SetActive(true);
+                     StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                 }
+
+                 if (isActivated && Canon.ammo == 0 && counter25 != ObstacleManager.Instance.lvl2Obs5.Count)
+                 {
                      GameManager.Instance.isGameStarted = false;
+                     GameManager.Instance.failPanel.SetActive(true);
                  }
                 
                  //6th OBS
@@ -511,11 +573,16 @@ namespace Managers
                          }
                          isObs7Complete = true;  
                      }
-                     if(Canon.ammo==0 && counter26!=ObstacleManager.Instance.lvl2Obs6.Count)
+                     if (Canon.ammo == 0)
                      {
-                         Debug.Log("Not all of them has dropped 26");
-                         GameManager.Instance.failPanel.SetActive(true);
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter26 != ObstacleManager.Instance.lvl2Obs6.Count)
+                     {
                          GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
                      }
                     
                  }
@@ -557,7 +624,7 @@ namespace Managers
                      winPanel.SetActive(true);
                      GameManager.Instance.coin += 100;
                      PlayerPrefs.SetInt("coin",GameManager.Instance.coin);
-                     if(Canon.ammo==0 && counter16!=ObstacleManager.Instance.lvl2Obs7.Count)
+                     if(Canon.ammo==0 && counter27!=ObstacleManager.Instance.lvl2Obs7.Count)
                      {
                          winPanel.SetActive(true);
                          GameManager.Instance.isGameStarted = false;
@@ -596,15 +663,19 @@ namespace Managers
                          }
                          isObs2Complete = true;
                      }
-                    
-                 }
-                 if(Canon.ammo==0 && counter11!=ObstacleManager.Instance.lvl3Obs1.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
 
+                     if (isActivated && Canon.ammo == 0 && counter31 != ObstacleManager.Instance.lvl3Obs1.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
+                 }
+                 
                  //2ND OBS
                  
                  if (isObs2Complete && shot32 != 0)
@@ -624,14 +695,19 @@ namespace Managers
                          }
                          isObs3Complete = true;
                      }
-                    
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter32 != ObstacleManager.Instance.lvl3Obs2.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
                  }
-                 if(Canon.ammo==0 && counter12!=ObstacleManager.Instance.lvl3Obs2.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
                 
                  //3RD OBS
                  
@@ -653,14 +729,19 @@ namespace Managers
                          }
                          isObs4Complete = true;  
                      }
-                    
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter33 != ObstacleManager.Instance.lvl3Obs4.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
                  }
-                 if(Canon.ammo==0 && counter13!=ObstacleManager.Instance.lvl3Obs3.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                
                 
                  //4th OBS
                  if (isObs4Complete && shot34 != 0)
@@ -680,14 +761,19 @@ namespace Managers
                          }
                          isObs5Complete = true;  
                      }
-                    
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter34 != ObstacleManager.Instance.lvl3Obs4.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
                  }
-                 if(Canon.ammo==0 && counter14!=ObstacleManager.Instance.lvl3Obs4.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
                
                 
                  //5th OBS
@@ -709,14 +795,19 @@ namespace Managers
                          }
                          isObs6Complete = true;  
                      }
-                    
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter35 != ObstacleManager.Instance.lvl3Obs5.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
                  }
-                 if(Canon.ammo==0 && counter15!=ObstacleManager.Instance.lvl3Obs5.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                
                 
                  //6th OBS
                  if (isObs6Complete && shot36 != 0)
@@ -737,14 +828,19 @@ namespace Managers
                          }
                          isObs7Complete = true;  
                      }
-                    
+                     if (Canon.ammo == 0)
+                     {
+                         StartCoroutine(WaitForThreeSeconds(3f));
+                            
+                     }
+
+                     if (isActivated && Canon.ammo == 0 && counter36 != ObstacleManager.Instance.lvl3Obs6.Count)
+                     {
+                         GameManager.Instance.isGameStarted = false;
+                         GameManager.Instance.failPanel.SetActive(true);
+                     }
                  }
-                 if(Canon.ammo==0 && counter16!=ObstacleManager.Instance.lvl3Obs6.Count)
-                 {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+               
                  //7th OBS
                  if (isObs7Complete && shot37 != 0)
                  {
@@ -780,13 +876,13 @@ namespace Managers
                          GameManager.Instance.coin += 100;
                          PlayerPrefs.SetInt("coin",GameManager.Instance.coin);
                      }
-                    
+                     if(Canon.ammo==0 && counter37!=ObstacleManager.Instance.lvl3Obs7.Count)
+                     {
+                         winPanel.SetActive(true);
+                         GameManager.Instance.isGameStarted = false;
+                     }
                  }
-                 if(Canon.ammo==0 && counter17!=ObstacleManager.Instance.lvl3Obs7.Count)
-                 {
-                     winPanel.SetActive(true);
-                     GameManager.Instance.isGameStarted = false;
-                 }
+                 
              }
             }
            
