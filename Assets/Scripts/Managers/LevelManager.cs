@@ -391,7 +391,7 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter12!=ObstacleManager.Instance.lvl2Obs2.Count)
+                 if(Canon.ammo==0 && counter22!=ObstacleManager.Instance.lvl2Obs2.Count)
                  {
                      Debug.Log("Not all of them has dropped 22");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -421,7 +421,7 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter13!=ObstacleManager.Instance.lvl2Obs3.Count)
+                 if(Canon.ammo==0 && counter23!=ObstacleManager.Instance.lvl2Obs3.Count)
                  {
                      Debug.Log("Not all of them has dropped 23");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -452,7 +452,7 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter14!=ObstacleManager.Instance.lvl2Obs4.Count)
+                 if(Canon.ammo==0 && counter24!=ObstacleManager.Instance.lvl2Obs4.Count)
                  {
                      Debug.Log("Not all of them has dropped 24");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -483,7 +483,7 @@ namespace Managers
                      }
                     
                  }
-                 if(Canon.ammo==0 && counter15!=ObstacleManager.Instance.lvl2Obs5.Count)
+                 if(Canon.ammo==0 && counter25!=ObstacleManager.Instance.lvl2Obs5.Count)
                  {
                      Debug.Log("Not all of them has dropped 25");
                      GameManager.Instance.failPanel.SetActive(true);
@@ -511,7 +511,7 @@ namespace Managers
                          }
                          isObs7Complete = true;  
                      }
-                     if(Canon.ammo==0 && counter16!=ObstacleManager.Instance.lvl2Obs6.Count)
+                     if(Canon.ammo==0 && counter26!=ObstacleManager.Instance.lvl2Obs6.Count)
                      {
                          Debug.Log("Not all of them has dropped 26");
                          GameManager.Instance.failPanel.SetActive(true);
