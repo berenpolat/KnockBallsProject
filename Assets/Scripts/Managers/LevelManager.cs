@@ -314,11 +314,10 @@ namespace Managers
                             GameManager.Instance.coin = 10;
                             PlayerPrefs.SetInt("coin",10);
                         }
-                        if(shot17==0 && counter17!=ObstacleManager.Instance.lvl1Obs7.Count)
+                        if(shot17==0)
                         {
-                            Debug.Log("Not all of them has dropped17");
-                            GameManager.Instance.failPanel.SetActive(true);
                             GameManager.Instance.isGameStarted = false;
+                            winPanel.SetActive(true);
                         }
                     }
                     
@@ -550,10 +549,16 @@ namespace Managers
                          }
                      }
                      GameManager.Instance.inGameScore = 0;
+                     isObs1Complete = true;
+                     winPanelInGameScoreText.text = Canon.ammo.ToString();
+                     winPanelCoinText.text = "+10";
+                     winPanelLevelText.text = "LEVEL 3";
+                     winPanel.SetActive(true);
+                     GameManager.Instance.coin += 100;
+                     PlayerPrefs.SetInt("coin",GameManager.Instance.coin);
                      if(shot27==0 && counter16!=ObstacleManager.Instance.lvl2Obs7.Count)
                      {
-                         Debug.Log("Not all of them has dropped 27");
-                         GameManager.Instance.failPanel.SetActive(true);
+                         winPanel.SetActive(true);
                          GameManager.Instance.isGameStarted = false;
                      }
                  }
@@ -766,13 +771,19 @@ namespace Managers
                              GameManager.Instance.levelSliderBlocks[i].color=Color.gray;
                          }
                          GameManager.Instance.inGameScore = 0;
+                         isObs1Complete = true;
+                         winPanelInGameScoreText.text = Canon.ammo.ToString();
+                         winPanelCoinText.text = "+10";
+                         winPanelLevelText.text = "LEVEL 4";
+                         winPanel.SetActive(true);
+                         GameManager.Instance.coin += 100;
+                         PlayerPrefs.SetInt("coin",GameManager.Instance.coin);
                      }
                     
                  }
                  if(shot37==0 && counter17!=ObstacleManager.Instance.lvl3Obs7.Count)
                  {
-                     Debug.Log("Not all of them has dropped");
-                     GameManager.Instance.failPanel.SetActive(true);
+                     winPanel.SetActive(true);
                      GameManager.Instance.isGameStarted = false;
                  }
              }
