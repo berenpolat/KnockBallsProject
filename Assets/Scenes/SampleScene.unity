@@ -24120,6 +24120,9 @@ MonoBehaviour:
   - {fileID: 1204087243}
   - {fileID: 1119859047}
   - {fileID: 624469297}
+  Level1Button: {fileID: 1927654007}
+  Level2Button: {fileID: 1785782458}
+  Level3Button: {fileID: 623626624}
   lvlText: {fileID: 1692581241}
   bestScoreText: {fileID: 1887720805}
   inGameScoreText: {fileID: 1054150863}

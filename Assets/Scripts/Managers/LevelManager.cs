@@ -830,6 +830,7 @@ namespace Managers
         public void OnClickedLevel1Button()
         {
             Debug.Log("Level 1");
+            
         }
 
         public void OnClickedLevel2Button()

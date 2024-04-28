@@ -36,7 +36,7 @@ namespace Managers
         [SerializeField] private GameObject levelTreePanel;
         public GameObject failPanel;
     
-
+       
         #endregion
 
         #region LevelSliderImages
@@ -45,6 +45,15 @@ namespace Managers
 
         #endregion
 
+       
+        
+        #region LevelButtons
+
+        [SerializeField] private Button Level1Button;
+        [SerializeField] private Button Level2Button;
+        [SerializeField] private Button Level3Button;
+        
+        #endregion
         #region Texts
 
         [SerializeField] private Text lvlText;
@@ -198,10 +207,37 @@ namespace Managers
         public void OnClickLevelTreeDisplayButton()
         {
             levelTreePanel.SetActive(true);
+            if (LevelManager.Instance.isLevel1Complete)
+            {
+                Level1Button.interactable = true;
+            }
+            else
+            {
+                Level1Button.interactable = false;
+            }
+
+            if (LevelManager.Instance.isLevel2Complete)
+            {
+                Level2Button.interactable = true;
+            }
+            else
+            {
+                Level2Button.interactable = false;
+            }
+
+            if (LevelManager.Instance.isLevel3Complete)
+            {
+                Level3Button.interactable = true;
+            }
+            else
+            {
+                Level3Button.interactable = false;
+            }
         }
         public void OnClickCancelLevelTreeButton()
         {
             levelTreePanel.SetActive(false);
+           
         }
 
         public void OnClickDisplayLevel1Button()
