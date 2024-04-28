@@ -295,6 +295,12 @@ namespace Managers
             }
             
         }
+
+        public void OnClickContinueButton()
+        {
+            inGamePanel.SetActive(false);
+            startPanel.SetActive(true);
+        }
         
         #endregion
         

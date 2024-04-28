@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class bulletBreak : MonoBehaviour
@@ -8,6 +9,7 @@ public class bulletBreak : MonoBehaviour
     [SerializeField] private float forceMultiplier; 
     private int CurrentAmmo;
 
+    
     private void Update()
     {
         CurrentAmmo = Canon.ammo;
@@ -33,8 +35,7 @@ public class bulletBreak : MonoBehaviour
                 {
                    
                     Vector3 forceDirection = child.position - transform.position;
-
-                   
+                    
                     childRigidbody.AddForce(forceDirection.normalized * forceMultiplier, ForceMode.Impulse);
                 }
             }

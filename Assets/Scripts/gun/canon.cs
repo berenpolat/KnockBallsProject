@@ -10,7 +10,7 @@ public class Canon : MonoBehaviour
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Transform bulletPosition;
-    
+    [SerializeField] private AudioSource asc;
     
     
     private Animator animator;
@@ -39,34 +39,36 @@ public class Canon : MonoBehaviour
             {
                 transform.LookAt(point); 
                 Fire(point);
+                asc.Play();
             }
         }
     }
     
     private void Fire(Vector3 targetPosition)
     {
+        
              if (ammo > 0) 
-               {
+             {
                  dir = targetPosition - bulletPosition.position;
         
                  GameObject bullet = objectPool.instance.getPooledObject();
 
-                   if (bullet != null)
-                      { 
-                         animator.SetTrigger("Shot");
-                         bullet.transform.position = bulletPosition.position;
-                         bullet.SetActive(true); 
-                         ammo--;
-                         bullet.GetComponent<Rigidbody>().velocity = dir.normalized * bulletSpeed; 
-                      }
-                   else if (bullet == null && ammo > 0 )
-                      {
-                                    bullet.transform.position = bulletPosition.position;
-                                    bullet.SetActive(true);
-                                    ammo--;
-                                    bullet.GetComponent<Rigidbody>().velocity = dir.normalized * bulletSpeed; 
-                      }
-               }
+                 if (bullet != null)
+                 { 
+                     animator.SetTrigger("Shot");
+                     bullet.transform.position = bulletPosition.position;
+                     bullet.SetActive(true); 
+                     ammo--;
+                     bullet.GetComponent<Rigidbody>().velocity = dir.normalized * bulletSpeed; 
+                 }
+                 else if (bullet == null && ammo > 0 )
+                 {
+                     bullet.transform.position = bulletPosition.position;
+                     bullet.SetActive(true);
+                     ammo--;
+                     bullet.GetComponent<Rigidbody>().velocity = dir.normalized * bulletSpeed; 
+                 }
+             }
     }
 
   
