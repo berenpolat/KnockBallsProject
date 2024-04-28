@@ -9,39 +9,46 @@ public class CircleTransition : MonoBehaviour
     private Canvas canvas;
     public Image blackScreen;
     private static readonly int Radius = Shader.PropertyToID("Radius");
-
+    private bool transitionInProgress = false;
+    private Text shootCounterText;
+    private GameObject objectWithTag;
+    
+    
+    
     private void Awake()
     {
         canvas = GetComponent<Canvas>();
     }
+    
 
     private void Start()
     {
         DrawBlackScreen();
+        objectWithTag = GameObject.FindGameObjectWithTag("ShootCounter");
+        if (objectWithTag != null)
+        {
+            shootCounterText = objectWithTag.GetComponent<Text>();
+        }
     }
 
     private void Update()
     {
         //When we run out of balls the coroutine starts
-        if (Input.GetKeyDown(KeyCode.A))
+        if (shootCounterText != null && shootCounterText.text == "0" && !transitionInProgress)
         {
             OpenBlackScreen();
         }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            CloseBlackScreen();
-        }
+
     }
 
     public void OpenBlackScreen()
     {
-        StartCoroutine(Transition(2, 0, 1));
+        transitionInProgress = true;
+        // blackScreen object
+        blackScreen.gameObject.SetActive(true);
+        StartCoroutine(Transition(5f, 1f, 0f));
     }
-
-    public void CloseBlackScreen()
-    {
-        StartCoroutine(Transition(2, 1, 0));
-    }
+    
 
     private void DrawBlackScreen()
     {
@@ -74,5 +81,8 @@ public class CircleTransition : MonoBehaviour
             blackScreen.material.SetFloat(Radius, radius);
             yield return null;
         }
+
+        transitionInProgress = false;
     }
+    
 }

@@ -29,6 +29,7 @@ TagManager:
   - 37
   - bullet
   - breakble
+  - ShootCounter
   layers:
   - Default
   - TransparentFX

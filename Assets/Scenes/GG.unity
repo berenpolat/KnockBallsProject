@@ -10971,7 +10971,7 @@ GameObject:
   - component: {fileID: 743295044}
   m_Layer: 5
   m_Name: BallCounter
-  m_TagString: Untagged
+  m_TagString: ShootCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23826,6 +23826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: blackScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 678162749136094197, guid: a9bc1a557e49c8146b6d0c1e376e09de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8460204034453858123, guid: a9bc1a557e49c8146b6d0c1e376e09de,
         type: 3}
