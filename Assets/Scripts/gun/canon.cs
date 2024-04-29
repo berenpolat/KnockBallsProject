@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Managers;
 using UnityEngine;
 
 public class Canon : MonoBehaviour
@@ -25,7 +21,6 @@ public class Canon : MonoBehaviour
      private void Start()
      {
          animator = GetComponent<Animator>();
-         
      }
 
      private void Update()
@@ -39,7 +34,7 @@ public class Canon : MonoBehaviour
             {
                 transform.LookAt(point); 
                 Fire(point);
-                asc.Play();
+                
             }
         }
     }
@@ -49,6 +44,7 @@ public class Canon : MonoBehaviour
         
              if (ammo > 0) 
              {
+                 asc.PlayOneShot(asc.clip);
                  dir = targetPosition - bulletPosition.position;
         
                  GameObject bullet = objectPool.instance.getPooledObject();
