@@ -9,9 +9,9 @@ namespace Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private Button lvl1Button;
-        [SerializeField] private Button lvl2Button;
-        [SerializeField] private Button lvl3Button;
+        public Button lvl1Button;
+        public Button lvl2Button;
+        public Button lvl3Button;
        
         public bool isGame0,isLevel1Complete, isLevel2Complete,isLevel3Complete;
         public int shot11,shot12,shot13,shot14,shot15,shot16,shot17,shot21,shot22,shot23,shot24,shot25,shot26,shot27,shot31,shot32,shot33,shot34,shot35,shot36,shot37;
@@ -89,6 +89,15 @@ namespace Managers
             shot23 = 5;
             shot24 = 6;
             shot25 = 8;
+            shot26 = 8;
+            shot27 = 9;
+            shot31 = 4;
+            shot32 = 5;
+            shot33 = 6;
+            shot34 = 7;
+            shot35 = 8;
+            shot36 = 9;
+            shot37 = 10;
             cb = lvl1Button.colors;
             cb.disabledColor = Color.cyan;
             Canon.ammo = shot11;
@@ -327,7 +336,6 @@ namespace Managers
                     
                     if (isObs7Complete && shot17 != 0&& GameManager.Instance.isGameStarted)
                     {
-                      
                         
                         if(Canon.ammo==0)
                         {
@@ -365,7 +373,6 @@ namespace Managers
                             winPanel.SetActive(true);
                             isActivated = false;
                             GameManager.Instance.isGameStarted = false;
-                            
                         }
                         
                     }
@@ -407,7 +414,6 @@ namespace Managers
                      if (Canon.ammo == 0)
                      {
                          StartCoroutine(WaitForThreeSeconds(3f));
-                            
                      }
 
                      if (isActivated && Canon.ammo == 0 && counter21 != ObstacleManager.Instance.lvl2Obs1.Count)
@@ -949,7 +955,6 @@ namespace Managers
         public void OnClickedLevel1Button()
         {
             Debug.Log("Level 1");
-            
         }
 
         public void OnClickedLevel2Button()

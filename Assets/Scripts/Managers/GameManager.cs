@@ -90,6 +90,9 @@ namespace Managers
             level = PlayerPrefs.GetInt("level");
             bestScore = PlayerPrefs.GetInt("bestScore");
             coin = PlayerPrefs.GetInt("coin");
+            LevelManager.Instance.lvl1Button.interactable = true;
+            LevelManager.Instance.lvl2Button.interactable = false;
+            LevelManager.Instance.lvl3Button.interactable = false;
             if (level == 0 || level==1)
             {
                 PlayerPrefs.SetInt("level",1);
@@ -116,6 +119,9 @@ namespace Managers
                 {
                     ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
                 }
+                LevelManager.Instance.lvl1Button.interactable = false;
+                LevelManager.Instance.lvl2Button.interactable = true;
+                LevelManager.Instance.lvl3Button.interactable = false;
             }
             if (level == 3)
             {
@@ -129,6 +135,9 @@ namespace Managers
                 {
                     ObstacleManager.Instance.lvl3Obs1[i].SetActive(true);
                 }
+                LevelManager.Instance.lvl1Button.interactable = false;
+                LevelManager.Instance.lvl2Button.interactable = false;
+                LevelManager.Instance.lvl3Button.interactable = true;
             }
         }
 
@@ -259,7 +268,6 @@ namespace Managers
             {
                 ObstacleManager.Instance.lvl1Obs1[i].SetActive(true);
             }
-               
             
         } 
         public void OnClickDisplayLevel2Button()
