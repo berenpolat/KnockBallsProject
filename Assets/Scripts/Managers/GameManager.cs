@@ -148,6 +148,7 @@ namespace Managers
 
         private void StartTheGame()
         {
+            failPanel.SetActive(false);
             isGameStarted = true;
             startPanel.SetActive(false);
             inGamePanel.SetActive(true);
@@ -159,6 +160,7 @@ namespace Managers
             startPanel.SetActive(true);
             inGamePanel.SetActive(false);
             isGameStarted = false;
+            
         }
 
         private void MoveObsHolderAtTheStart()
@@ -298,15 +300,15 @@ namespace Managers
 
         public void OnClickContinueButton()
         {
-            inGamePanel.SetActive(false);
-            startPanel.SetActive(true);
+            SceneManager.LoadSceneAsync(0);
         }
 
         public void OnClickCloseFailPanel()
         {
-            failPanel.SetActive(false);
-            inGamePanel.SetActive(false);
-            startPanel.SetActive(true);
+            // failPanel.SetActive(false);
+            // inGamePanel.SetActive(false);
+            // startPanel.SetActive(true);
+            SceneManager.LoadSceneAsync(0);
         }
         #endregion
         

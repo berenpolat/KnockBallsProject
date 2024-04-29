@@ -47,7 +47,7 @@ namespace Managers
         private ColorBlock cb;
         
 
-        [SerializeField] private GameObject winPanel;
+        public GameObject winPanel;
         [SerializeField] private Text winPanelLevelText;
         [SerializeField] private Text winPanelInGameScoreText;
         [SerializeField] private Text winPanelCoinText;
@@ -129,7 +129,7 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
+                            StartCoroutine(WaitForThreeSeconds(4f));
                             
                         }
 
@@ -137,6 +137,8 @@ namespace Managers
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            StopCoroutine(WaitForThreeSeconds(4f));
+                            isActivated = false;
                         }
                     }
                    
@@ -162,14 +164,15 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
-                            
+                            StartCoroutine(WaitForThreeSeconds(4f));
                         }
 
                         if (isActivated && Canon.ammo == 0 && counter12 != ObstacleManager.Instance.lvl1Obs2.Count)
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            StopCoroutine(WaitForThreeSeconds(4f));
+                            isActivated = false;
                         }
                     }
                     
@@ -179,7 +182,6 @@ namespace Managers
                    
                     if (isObs3Complete && shot13 != 0 && GameManager.Instance.isGameStarted)
                     {
-                        
                         
                         
                         if (counter13 == ObstacleManager.Instance.lvl1Obs3.Count)
@@ -198,7 +200,7 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
+                            StartCoroutine(WaitForThreeSeconds(4f));
                             
                         }
 
@@ -206,6 +208,8 @@ namespace Managers
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            StopCoroutine(WaitForThreeSeconds(4f));
+                            isActivated = false;
                         }
                     }
                    
@@ -231,7 +235,7 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
+                            StartCoroutine(WaitForThreeSeconds(4f));
                             
                         }
 
@@ -239,6 +243,8 @@ namespace Managers
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            StopCoroutine(WaitForThreeSeconds(4f));
+                            isActivated = false;
                         }
                     }
                     
@@ -267,7 +273,7 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
+                            StartCoroutine(WaitForThreeSeconds(4f));
                             
                         }
 
@@ -275,6 +281,8 @@ namespace Managers
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            StopCoroutine(WaitForThreeSeconds(4f));
+                            isActivated = false;
                         }
                     }
                     
@@ -302,7 +310,7 @@ namespace Managers
                         }
                         if (Canon.ammo == 0)
                         {
-                            StartCoroutine(WaitForThreeSeconds(3f));
+                            StartCoroutine(WaitForThreeSeconds(4f));
                             
                         }
 
@@ -310,6 +318,7 @@ namespace Managers
                         {
                             GameManager.Instance.isGameStarted = false;
                             GameManager.Instance.failPanel.SetActive(true);
+                            isActivated = false;
                         }
                     }
                    
@@ -320,18 +329,21 @@ namespace Managers
                     {
                       
                         
-                        if (counter17 == ObstacleManager.Instance.lvl1Obs7.Count)
+                        if(Canon.ammo==0)
                         {
                             Canon.ammo = shot21;
                             GameManager.Instance.levelSliderBlocks[6].color= Color.red;
                             isObs7Complete = false;
                             GameManager.Instance.level = 2;
                             PlayerPrefs.SetInt("level", 2);
-                            GameManager.Instance.StopTheGame();
                             isGame0 = false;
                             isLevel1Complete = true;
                             ObstacleManager.Instance.Platform17.SetActive(false);
                             ObstacleManager.Instance.Platform21.SetActive(true);
+                            for (int i = 0; i < ObstacleManager.Instance.lvl1Obs7.Count(); i++)
+                            {
+                                ObstacleManager.Instance.lvl1Obs7[i].SetActive(false);
+                            }
                             for (int i = 0; i < ObstacleManager.Instance.lvl2Obs1.Count(); i++)
                             {
                                 ObstacleManager.Instance.lvl2Obs1[i].SetActive(true);
@@ -349,12 +361,11 @@ namespace Managers
                             winPanelLevelText.text = "LEVEL 2";
                             winPanel.SetActive(true);
                             GameManager.Instance.coin = 10;
-                            PlayerPrefs.SetInt("coin",10);
-                        }
-                        if(Canon.ammo==0)
-                        {
-                            GameManager.Instance.isGameStarted = false;
+                            PlayerPrefs.SetInt("coin", 10);
                             winPanel.SetActive(true);
+                            isActivated = false;
+                            GameManager.Instance.isGameStarted = false;
+                            
                         }
                         
                     }
